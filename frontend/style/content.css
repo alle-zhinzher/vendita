@@ -1,18 +1,21 @@
 @import url("./content/slider.css");
 @import url("./content/categories.css");
+@import url("./content/scroll.css");
+
 
 main {
     width: 80%;
-    height: 530px;
+    min-height: 530px;
     background-color: aqua;
     padding: 20px 0;
 }
 
 .scrolling-wrapper{
     overflow-y: auto;
+    height: 490px;
     overflow-x: hidden;
     text-align: center;
-    height: 490px;
+    min-height: 490px;
     width: 96%;
     margin: auto;
     padding: 10px;
@@ -24,24 +27,32 @@ main {
     font-size: 20px;
 }
 
-#content-scroll::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
+
+
+
+@media screen and (max-width: 800px) {
+    .scrolling-wrapper{
+        width: 100%;
+        min-height: 1180px;
+        overflow-y: hidden;
+        padding: 10px;
+    }
+    main {
+        padding: 0;
+        width: 100%;
+    }
+
 }
+@media screen and (max-width: 440px) {
+    .scrolling-wrapper{
+        width: 100%;
+        min-height: 1700px;
+        overflow-y: hidden;
+        padding: 10px;
+    }
+    main {
+        padding: 0;
+        width: 100%;
+    }
 
-#content-scroll::-webkit-scrollbar
-{
-	width: 12px;
-	background-color: #F5F5F5;
 }
-
-#content-scroll::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #555;
-}
-
-

@@ -4,3 +4,10 @@
     height: 410px;
     background-color: rgb(103, 202, 45);
 }
+
+@media screen and (max-width: 440px) {
+    .slider {
+        height: 310px;
+    }
+
+}
