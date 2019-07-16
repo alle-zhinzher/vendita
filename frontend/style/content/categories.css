@@ -1,0 +1,15 @@
+.categories {
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+}
+
+.category {
+    width: 32%;
+    height: 200px;
+    background-color: rgb(238, 255, 0);
+    border: 2px solid black;
+}
