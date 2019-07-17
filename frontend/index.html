@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style/main.css">
+    <script src="https://kit.fontawesome.com/b9f4dc0f51.js"></script>
     <title>Vendita all'asta</title>
 </head>
 
@@ -12,7 +13,31 @@
     <section class="window">
         <!-- HEADER -->
         <header>
-            <h1>HEADER</h1>
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-gavel"></i>
+                    <h1>Vendita all`astera</h1>
+                </div>
+                <input type="checkbox" name="toggle" id="menu" class="toggleMenu">
+                <label for="menu" class="toggleMenu"><i class="fa fa-bars"></i>Меню</label>
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li>
+                        <input type="checkbox" name="toggle" class="toggleSubmenu" id="sub_m1">
+                        <a href="#">hot prices</a>
+                        <label for="sub_m1" class="toggleSubmenu"><i class="fa"></i></label>
+                        <ul>
+                            <li><a href="#">Одежда</a></li>
+                            <li><a href="#">Электроника</a></li>
+                            <li><a href="#">Продукты питания</a></li>
+                            <li><a href="#">Инструменты</a></li>
+                            <li><a href="#">Быт. химия</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">login</a></li>
+                </ul>
+            </nav>
         </header>
         <!-- /HEADER -->
         <!-- ASIDE -->

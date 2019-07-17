@@ -26,10 +26,10 @@
 
 @media screen and (max-width: 440px) {
    .categories {
-       min-height: 1250px;
+       height: 1270px;
        flex-wrap: nowrap;
        flex-direction: column;
-       align-content: space-between;
+       align-content: space-around;
     }
     .category {
         width: 100%;

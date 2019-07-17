@@ -5,14 +5,14 @@
 
 main {
     width: 80%;
-    min-height: 530px;
+    min-height: 600px;
     background-color: aqua;
     padding: 20px 0;
 }
 
 .scrolling-wrapper{
     overflow-y: auto;
-    height: 490px;
+    height: 580px;
     overflow-x: hidden;
     text-align: center;
     min-height: 490px;
@@ -23,7 +23,7 @@ main {
 }
 
 .scrolling-wrapper h3 {
-    margin: 15px;
+    margin: 30px;
     font-size: 20px;
 }
 
@@ -33,7 +33,7 @@ main {
 @media screen and (max-width: 800px) {
     .scrolling-wrapper{
         width: 100%;
-        min-height: 1180px;
+        min-height: 1220px;
         overflow-y: hidden;
         padding: 10px;
     }
@@ -46,7 +46,7 @@ main {
 @media screen and (max-width: 440px) {
     .scrolling-wrapper{
         width: 100%;
-        min-height: 1700px;
+        min-height: 1780px;
         overflow-y: hidden;
         padding: 10px;
     }
