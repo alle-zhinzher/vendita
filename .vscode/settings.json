@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/home/zhynzher/.local/share/virtualenvs/vendita-MPIOKHBe/bin/python"
+    "python.pythonPath": "/home/zhynzher/.local/share/virtualenvs/vendita-MPIOKHBe/bin/python",
+    "python.formatting.provider": "yapf"
 }
