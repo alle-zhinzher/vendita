@@ -70,6 +70,7 @@ nav li ul{
 
 nav li > ul li{
     border: 1px solid #c7c8ca;
+    z-index: 1000;
 } 
 
 nav li:hover > ul{

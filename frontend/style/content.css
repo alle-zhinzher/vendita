@@ -5,25 +5,24 @@
 
 main {
     width: 80%;
-    min-height: 600px;
-    background-color: aqua;
+    height: 620px;
+    background-color: #d7d7fa;
     padding: 20px 0;
 }
 
 .scrolling-wrapper{
     overflow-y: auto;
-    height: 580px;
     overflow-x: hidden;
     text-align: center;
     min-height: 490px;
     width: 96%;
     margin: auto;
     padding: 10px;
-    background-color: rgb(226, 226, 209);
+    background-color: #ececed;
 }
 
 .scrolling-wrapper h3 {
-    margin: 30px;
+    margin: 10px;
     font-size: 20px;
 }
 

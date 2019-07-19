@@ -2,8 +2,9 @@
 aside {
     width: 20%;
     height: 620px;
-    padding: 10px;
-    background-color: blueviolet;
+    padding: 30px;
+    background-color: #d7d7fa;
+    border-right: 2px solid black;
 }
 
 @media screen and (max-width: 800px) {
