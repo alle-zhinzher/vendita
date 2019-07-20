@@ -8,6 +8,7 @@ import store from '../store';
 //Components
 import TestComponent from './test/TestComponent'
 
+
 export default class App extends Component {
 
     render() {

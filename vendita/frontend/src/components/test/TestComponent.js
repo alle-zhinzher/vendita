@@ -1,7 +1,18 @@
 import React, { Component } from 'react'
 
-class TestComponent extends Component {
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
+import { getLeads } from '../../actions/leads';
+
+class TestComponent extends Component {
+    static PropTypes = {
+        leads: PropTypes.array.isRequired,
+        getLeads: PropTypes.func.isRequired,
+    }
+    componentDidMount() {
+        this.props.getLeads();
+    }
     render() {
         return (
             <div>
@@ -11,4 +22,8 @@ class TestComponent extends Component {
     }
 }
 
-export default TestComponent;
+const mapStateToProps = state => ({
+    leads: state.leads.leads
+});
+
+export default connect(mapStateToProps, { getLeads })(TestComponent);
