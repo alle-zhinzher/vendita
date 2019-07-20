@@ -6,14 +6,16 @@ import { Provider } from 'react-redux';
 import store from '../store';
 
 //Components
-import testComponent from './testComponent/test'
+import TestComponent from './test/TestComponent'
 
 export default class App extends Component {
 
     render() {
         return (
-            <Provider>
-                <testComponent />
+            <Provider store={store}>
+                <Fragment>
+                    <TestComponent />
+                </Fragment>
             </Provider>
         )
     }
