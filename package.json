@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/alle-zhinzher/vendita#readme",
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "webpack": "^4.36.1",
     "webpack-cli": "^3.3.6"
   }
