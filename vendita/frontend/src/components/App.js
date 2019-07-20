@@ -1,15 +1,20 @@
 // React imports
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types'
+
+import { Provider } from 'react-redux';
+import store from '../store';
+
+//Components
+import testComponent from './testComponent/test'
 
 export default class App extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Hello World</h1>
-            </div>
+            <Provider>
+                <testComponent />
+            </Provider>
         )
     }
 }
