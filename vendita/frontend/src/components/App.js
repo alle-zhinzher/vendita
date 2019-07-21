@@ -7,11 +7,13 @@ import store from '../store';
 //React Router
 import { BrowserRouter as Router, Route } from "react-router-dom";
 //Components
-import Header from './header/Header';
-import Index from './index/Index';
-import About from './about/About';
-import BookList from './bookList/BookList';
+import Header from './pageComponents/header/Header';
+import Index from './pages/index/Index';
+import About from './pages/about/About';
+import BookList from './pages/bookList/BookList';
 import TestComponent from './test/TestComponent';
+// CSS
+import css from './Main.css'
 
 
 export default class App extends Component {

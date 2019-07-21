@@ -1,7 +1,6 @@
 header {
     width: 100%;
-}
-nav {
+    min-height: 50px;
     display: flex;
     justify-content: space-between;
     background: #ececed;
@@ -39,8 +38,10 @@ nav > ul{
     display: flex;
     justify-content: flex-end;
 }    
-
-nav > ul li a{
+ul span {
+    color:#454547;
+}
+nav > ul li .link{
     display: block;
     background: #ececed;
     padding: 17px;
@@ -54,9 +55,10 @@ nav > ul li a{
 nav > ul li{
     position: relative;
     border-left: 1px solid #c7c8ca;
+    z-index: 1000;
 }   
 
-nav li a:hover{
+nav li .link:hover{
     background: #454547;
     color: #ffffff;
     box-shadow: 1px 5px 10px -5px black;
@@ -70,7 +72,7 @@ nav li ul{
 
 nav li > ul li{
     border: 1px solid #c7c8ca;
-    z-index: 1000;
+    z-index: 100;
 } 
 
 nav li:hover > ul{
@@ -125,7 +127,7 @@ nav label.toggleSubmenu{
         padding-top: 5px; 
         font-size: 26px; 
     }
-    nav {
+    header {
         flex-direction: column;
         justify-content: center;
     }
@@ -137,13 +139,13 @@ nav label.toggleSubmenu{
     nav ul{
         display: none;
     }
-    nav ul li a{
+    nav ul li .link{
         width: 100%;
     }
     nav [type="checkbox"]{
         display: none;
     }  
-    nav > ul li ul li a {
+    nav > ul li ul li .link {
         background-color: #cfcfd3;
     } 
     nav label.toggleMenu{
@@ -171,7 +173,7 @@ nav label.toggleSubmenu{
         cursor: pointer;
         display: block;
     }
-    input.toggleSubmenu:checked ~ a{
+    input.toggleSubmenu:checked ~ .link{
         background: #454547;
         color: #fff;
     }
