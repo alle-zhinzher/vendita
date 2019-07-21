@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { getLeads } from '../../actions/leads';
 
 class TestComponent extends Component {
-    static PropTypes = {
+    static propTypes = {
         leads: PropTypes.array.isRequired,
         getLeads: PropTypes.func.isRequired,
     }
@@ -16,7 +16,11 @@ class TestComponent extends Component {
     render() {
         return (
             <div>
-                <h1>Hello World</h1>
+                {this.props.leads.map(lead => (
+                    <div key={lead.id}>
+                        <p><b>{lead.name}</b> - {lead.author}</p>
+                    </div>
+                ))}
             </div>
         )
     }
