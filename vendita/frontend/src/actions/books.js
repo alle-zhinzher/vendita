@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-import { GET_LEADS } from './types';
+import { GET_BOOKS } from './types';
 
 
 // GET LEADS
-export const getLeads = () => dispatch => {
+export const getBooks = () => dispatch => {
     axios.get("/api/books/")
         .then(res => {
             dispatch({
-                type: GET_LEADS,
+                type: GET_BOOKS,
                 payload: res.data
             });
         })

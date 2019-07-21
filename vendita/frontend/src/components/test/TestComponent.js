@@ -3,22 +3,22 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { getLeads } from '../../actions/leads';
+import { getBooks } from '../../actions/books';
 
 class TestComponent extends Component {
     static propTypes = {
-        leads: PropTypes.array.isRequired,
-        getLeads: PropTypes.func.isRequired,
+        books: PropTypes.array.isRequired,
+        getBooks: PropTypes.func.isRequired,
     }
     componentDidMount() {
-        this.props.getLeads();
+        this.props.getBooks();
     }
     render() {
         return (
             <div>
-                {this.props.leads.map(lead => (
-                    <div key={lead.id}>
-                        <p><b>{lead.name}</b> - {lead.author}</p>
+                {this.props.books.map(book => (
+                    <div key={book.id}>
+                        <p><b>{book.name}</b> - {book.author}</p>
                     </div>
                 ))}
             </div>
@@ -27,7 +27,7 @@ class TestComponent extends Component {
 }
 
 const mapStateToProps = state => ({
-    leads: state.leads.leads
+    books: state.booksReducer.books
 });
 
-export default connect(mapStateToProps, { getLeads })(TestComponent);
+export default connect(mapStateToProps, { getBooks })(TestComponent);

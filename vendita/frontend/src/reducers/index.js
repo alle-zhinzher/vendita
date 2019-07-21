@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 //User reduser imports
-import leads from './leads';
+import booksReducer from './books';
 
 
 export default combineReducers({
-    leads
+    booksReducer
 });
