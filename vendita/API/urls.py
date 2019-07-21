@@ -1,8 +1,8 @@
 from rest_framework import routers
-from .api import LeadViewSet
+from .api import BookViewSet
 
 router = routers.DefaultRouter()
 
-router.register('api/leads', LeadViewSet, 'leads')
+router.register('api/books', BookViewSet, 'Books')
 
 urlpatterns = router.urls

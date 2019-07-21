@@ -2,7 +2,7 @@ from django.db import models
 from PIL import Image
 
 
-class Lead(models.Model):
+class Book(models.Model):
     name = models.CharField(max_length=100, default='SOME BOOK NAME')
     author = models.CharField(max_length=100, default='SOME AUTHOR')
     discrition = models.TextField(max_length=1000, blank=True)
