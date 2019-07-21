@@ -1,7 +1,8 @@
-import { GET_BOOKS } from '../actions/types.js';
+import { GET_BOOKS, GET_HOOT_BOOKS } from '../actions/types.js';
 
 const initialState = {
     books: [],
+    hoot_books: [],
 }
 
 export default function (state = initialState, action) {
@@ -10,6 +11,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 books: action.payload
+            }
+        case GET_HOOT_BOOKS:
+            return {
+                ...state,
+                hoot_books: action.payload
             }
         default:
             return state;

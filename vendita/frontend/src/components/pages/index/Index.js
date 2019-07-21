@@ -1,11 +1,19 @@
 import React from 'react'
+//Import styles
+import css from './Index.css'
+//Import page components 
+import Aside from '../../pageComponents/aside/Aside';
+import Slider from '../../pageComponents/slider/Slider';
+import Footer from '../../pageComponents/footer/Footer';
 
-//Import 
+
 function Index() {
     return (
-        <div>
-            <h1>Hello from index page</h1>
-        </div>
+        <section className="main-page-content">
+            <Aside />
+            <Slider />
+            <Footer />
+        </section>
     )
 }
 
