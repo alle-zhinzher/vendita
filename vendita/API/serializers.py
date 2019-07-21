@@ -7,3 +7,6 @@ class LeadSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lead
         fields = '__all__'
+
+    def create(self, validated_data):
+        return Lead.objects.create(**validated_data)
