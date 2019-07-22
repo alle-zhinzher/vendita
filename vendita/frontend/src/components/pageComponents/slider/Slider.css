@@ -1,5 +1,11 @@
 .slider {
     width: 80%;
     height: 650px;
-    background-color: brown;
+    background-color: rgb(168, 168, 168);
+}
+
+.slide {
+    width: 80%;
+    margin: auto;
+    
 }
