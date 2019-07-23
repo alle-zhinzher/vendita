@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-import { GET_BOOKS, GET_HOOT_BOOKS, GET_BOOKS_BY_GENRES } from './types';
+import {
+    GET_BOOKS,
+    GET_HOOT_BOOKS,
+    GET_BOOKS_BY_GENRES,
+    SORT_BOOKS_BY_PRICE,
+} from './types';
 
 
 // GET BOOKS
@@ -38,3 +43,10 @@ export const getBooksByGenre = (genre) => dispatch => {
         .catch(err => console.log(err));
 }
 
+export const sortBooksByPrice = (books, direction) => dispatch => {
+    let res = books.sort((book1, book2) => book1.cost - book2.cost)
+    dispatch({
+        type: SORT_BOOKS_BY_PRICE,
+        payload: direction ? res.reverse() : res
+    });
+}

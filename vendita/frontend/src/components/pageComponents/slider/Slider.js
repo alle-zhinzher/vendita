@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import css from './Slider.css'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getHootBooks } from '../../../actions/books';
+import { getHootBooks, getBooks } from '../../../actions/books';
 
 import Slide from "./Slide"
 
@@ -12,10 +12,13 @@ class Slider extends Component {
     static propTypes = {
         hoot_books: PropTypes.array.isRequired,
         getHootBooks: PropTypes.func.isRequired,
+        getBooks: PropTypes.func.isRequired,
 
     }
     componentWillMount() {
         this.props.getHootBooks();
+        this.props.getBooks();
+
         this.setState({
             active_index: 0
         })
@@ -57,4 +60,4 @@ const mapStateToProps = state => ({
     hoot_books: state.booksReducer.hoot_books,
 });
 
-export default connect(mapStateToProps, { getHootBooks })(Slider);
+export default connect(mapStateToProps, { getHootBooks, getBooks })(Slider);

@@ -2,6 +2,7 @@ import {
     GET_BOOKS,
     GET_HOOT_BOOKS,
     GET_BOOKS_BY_GENRES,
+    SORT_BOOKS_BY_PRICE,
 } from '../actions/types.js';
 
 const initialState = {
@@ -23,6 +24,11 @@ export default function (state = initialState, action) {
                 hoot_books: action.payload
             }
         case GET_BOOKS_BY_GENRES:
+            return {
+                ...state,
+                sorted_books: action.payload
+            }
+        case SORT_BOOKS_BY_PRICE:
             return {
                 ...state,
                 sorted_books: action.payload
