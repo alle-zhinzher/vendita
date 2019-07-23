@@ -43,7 +43,7 @@ class Slider extends Component {
 
     render() {
         return (
-            <section className="slider">
+            <section className="content-section slider">
                 <div className="slide">
                     <button className="slider-controler" onClick={() => this.prevItem()}>&#x2039;</button>
                     {this.props.hoot_books.map((book, index = 0) =>
