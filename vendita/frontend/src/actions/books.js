@@ -21,7 +21,7 @@ export const getHootBooks = () => dispatch => {
         .then(res => {
             dispatch({
                 type: GET_HOOT_BOOKS,
-                payload: res.data.filter(book => !book.is_hot_price)
+                payload: res.data.filter(book => book.is_hot_price)
             });
         })
         .catch(err => console.log(err));
