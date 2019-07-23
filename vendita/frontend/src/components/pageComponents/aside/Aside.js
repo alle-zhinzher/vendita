@@ -17,7 +17,7 @@ class Aside extends Component {
         return (
             <aside>
                 <input type="checkbox" name="toggle" id="aside" className="toggleMenu" />
-                <label htmlFor="aside" className="toggleMenu"><img src="http://127.0.0.1:8000/media/profile_pics/burger.svg" /></label>
+                <label htmlFor="aside" className="toggleMenu"><img src="http://127.0.0.1:8000/media/profile_pics/search.svg" /></label>
                 <div className="filter-wrapp">
                     <h2>Filter by:</h2>
                     <div className="category">

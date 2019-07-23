@@ -135,15 +135,16 @@ nav label.toggleSubmenu{
     }
     header {
         flex-direction: column;
-        justify-content: center;
+        justify-content: end;
     }
 
     nav{
         overflow: hidden;
         text-align: center;
     }
-    nav ul{
+    nav > ul{
         display: none;
+        margin-top:50px;
     }
     nav ul li .link{
         width: 100%;
@@ -155,7 +156,12 @@ nav label.toggleSubmenu{
         background-color: #cfcfd3;
     } 
     nav label.toggleMenu{
+        border-left: 1px solid rgb(156, 153, 153); 
+        position: absolute;
+        top:50px;
+        right: 0;
         display: block;
+        width: 50%;
     } 
     nav label.toggleMenu .fa{
         position: absolute;

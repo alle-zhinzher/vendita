@@ -91,7 +91,11 @@
 .disable{
     display: none;
 }
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 800px) {
+    .slider {
+        padding: 50px 0;
+        height: 700px;
+    }
     .slider, .slide  {
         width: 100%;
     }
@@ -118,7 +122,7 @@
     }
     .slider-controler {
         width: 15%;
-        height: 600px;
+        height: 550px;
     }
     .btn-buy {
         width: 200px;

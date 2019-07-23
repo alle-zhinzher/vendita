@@ -31,7 +31,7 @@
 .asideButton {
     text-align: center;
     display: block;
-    height: 30px;
+    min-height: 30px;
     width: 85%;
     padding-top: 5px;
     margin-left: 15px;
@@ -66,9 +66,7 @@ aside label.toggleSubmenu{
 @media screen and (max-width: 800px) {
     aside {
         width: 100%;
-    }
-    aside h2 {
-    margin-top: 0px;
+
     }
     .filter-wrapp {
         display: none;
@@ -78,15 +76,11 @@ aside label.toggleSubmenu{
         display: block;
     }
     aside label.toggleMenu{
+        position: absolute;
+        top: 50px;
+        width: 50%;
         display: block;
-    }
-
-}
-
-@media screen and (max-width: 440px) {
-    aside {
-        width: 100%;
-        height: 50px;
+        text-align: center;
     }
 
 }
