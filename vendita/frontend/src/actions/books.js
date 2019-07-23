@@ -27,3 +27,14 @@ export const getHootBooks = () => dispatch => {
         .catch(err => console.log(err));
 }
 
+export const getBooksByID = (id) => dispatch => {
+    axios.get("/api/books/")
+        .then(res => {
+            dispatch({
+                type: GET_HOOT_BOOKS,
+                payload: res.data.filter(book => book.id === id)
+            });
+        })
+        .catch(err => console.log(err));
+}
+
