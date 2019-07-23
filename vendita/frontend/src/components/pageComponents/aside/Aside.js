@@ -5,7 +5,7 @@ import css from './Aside.css'
 function Aside() {
     return (
         <aside>
-            Aside
+            <Link onClick="" className="link" to="/">Быт. химия</Link>
         </aside>
     )
 }
