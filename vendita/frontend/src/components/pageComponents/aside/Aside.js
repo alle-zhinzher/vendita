@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getBooksByGenre, sortBooksByPrice } from '../../../actions/books';
+import { getBooksByGenre, sortBooksByPrice, sortBooksByPages } from '../../../actions/books';
 import css from './Aside.css'
 import { Link } from "react-router-dom";
 
@@ -15,8 +15,9 @@ class Aside extends Component {
 
         getBooksByGenre: PropTypes.func.isRequired,
         sortBooksByPrice: PropTypes.func.isRequired,
-
+        sortBooksByPages: PropTypes.func.isRequired,
     }
+
     render() {
         return (
             <aside>
@@ -47,8 +48,12 @@ class Aside extends Component {
                             onClick={() => this.props.sortBooksByPrice(this.props.sorted_books.length ? this.props.sorted_books : this.props.books, true)}
                             to="/books">From greater to lesser</Link>
                         <h4>Pages:</h4>
-                        <Link className="asideButton" onClick={() => this.props.getBooksByGenre(17)} to="/books">From lesser to greater</Link>
-                        <Link className="asideButton" onClick={() => this.props.getBooksByGenre(17)} to="/books">From greater to lesser</Link>
+                        <Link className="asideButton"
+                            onClick={() => this.props.sortBooksByPages(this.props.sorted_books.length ? this.props.sorted_books : this.props.books, false)}
+                            to="/books">From lesser to greater</Link>
+                        <Link className="asideButton"
+                            onClick={() => this.props.sortBooksByPages(this.props.sorted_books.length ? this.props.sorted_books : this.props.books, true)}
+                            to="/books">From greater to lesser</Link>
                     </div>
                 </div>
 
@@ -64,4 +69,4 @@ const mapStateToProps = state => ({
     sorted_books: state.booksReducer.sorted_books,
 });
 
-export default connect(mapStateToProps, { getBooksByGenre, sortBooksByPrice })(Aside);
+export default connect(mapStateToProps, { getBooksByGenre, sortBooksByPrice, sortBooksByPages })(Aside);

@@ -2,3 +2,4 @@ export const GET_BOOKS = "GET_BOOKS";
 export const GET_HOOT_BOOKS = "GET_HOOT_BOOKS";
 export const GET_BOOKS_BY_GENRES = "GET_BOOKS_BY_GENRES";
 export const SORT_BOOKS_BY_PRICE = "SORT_BOOKS_BY_PRICE";
+export const SORT_BOOKS_BY_PAGES = "SORT_BOOKS_BY_PAGES";
