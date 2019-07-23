@@ -16,7 +16,7 @@ class Aside extends Component {
     render() {
         return (
             <aside>
-                <Link onClick={() => this.props.getBooksByID(17)} className="link" exact to="/books">Быт. химия</Link>
+                <Link onClick={() => this.props.getBooksByID(17)} className="link" to="/books">Быт. химия</Link>
             </aside >
         )
     }

@@ -15,7 +15,7 @@ header {
 
 }
 
-.logo i {
+.logo img {
     padding-top: 6px; 
     font-size: 30px; 
     width: 40px;
@@ -87,7 +87,12 @@ nav label.toggleMenu{
     font-size: 14px;
     cursor: pointer;
     position: relative;
-}   
+} 
+
+.toggleMenu img {
+    width: 20px;
+    height: 20px;
+}
 nav [type="checkbox"],
 nav label.toggleSubmenu{
     display: none;
@@ -157,8 +162,12 @@ nav label.toggleSubmenu{
         left: 12px;
         font-size: 18px;
     }
+    .row {
+        font-weight: bold;
+        font-size: 23px;
+    }
     input.toggleMenu:checked + label.toggleMenu{
-        background: #000;
+        background: rgb(49, 47, 47);
         color: #fff;
     }
     input.toggleMenu:checked ~ ul{
