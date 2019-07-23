@@ -16,7 +16,27 @@ class Aside extends Component {
     render() {
         return (
             <aside>
-                <Link onClick={() => this.props.getBooksByID(17)} className="link" to="/books">Быт. химия</Link>
+                <input type="checkbox" name="toggle" id="aside" className="toggleMenu" />
+                <label htmlFor="aside" className="toggleMenu"><img src="http://127.0.0.1:8000/media/profile_pics/burger.svg" /></label>
+                <div className="filter-wrapp">
+                    <h2>Filter by:</h2>
+                    <div className="category">
+                        <h4>Genre</h4>
+                        <Link className="asideButton" onClick={() => this.props.getBooksByID(17)} to="/books">Historycal</Link>
+                        <Link className="asideButton" onClick={() => this.props.getBooksByID(17)} to="/books">Romans</Link>
+                        <Link className="asideButton" onClick={() => this.props.getBooksByID(17)} to="/books">Novella</Link>
+                    </div>
+                    <h2>Sort by:</h2>
+                    <div className="category">
+                        <h4>Price:</h4>
+                        <Link className="asideButton" onClick={() => this.props.getBooksByID(17)} to="/books">From lesser to greater</Link>
+                        <Link className="asideButton" onClick={() => this.props.getBooksByID(17)} to="/books">From greater to lesser</Link>
+                        <h4>Pages:</h4>
+                        <Link className="asideButton" onClick={() => this.props.getBooksByID(17)} to="/books">From lesser to greater</Link>
+                        <Link className="asideButton" onClick={() => this.props.getBooksByID(17)} to="/books">From greater to lesser</Link>
+                    </div>
+                </div>
+
             </aside >
         )
     }

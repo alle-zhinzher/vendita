@@ -1,13 +1,84 @@
-aside {
-    width: 20%;
+ aside {
+     width: 20%;
+ }
+ .filter-wrapp {
+    width: 100%;
     height: 650px;
-    background-color: blue;
+    background-color: rgb(160, 160, 161);
+    border-right: 2px solid black;
+    text-align: left ;
+}
+
+.filter-wrapp h2 {
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 10px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgb(122, 117, 117);
+}
+
+.category {
+    margin-left: 25px;
+}
+
+.category h4 {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.asideButton {
+    text-align: center;
+    display: block;
+    height: 30px;
+    width: 85%;
+    padding-top: 5px;
+    margin-left: 15px;
+    margin-right: 10%;
+    margin-bottom: 3px;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+}
+.asideButton:hover {
+    background-color: rgb(65, 67, 70);
+    color: rgb(226, 211, 183);
+
+}
+
+aside label.toggleMenu{
+    background: #ececed;
+    display: none;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+} 
+
+aside [type="checkbox"],
+aside label.toggleSubmenu{
+    display: none;
 }
 
 @media screen and (max-width: 800px) {
     aside {
         width: 100%;
-        height: 100px;
+    }
+    aside h2 {
+    margin-top: 0px;
+    }
+    .filter-wrapp {
+        display: none;
+        width: 100%;
+    }
+    input.toggleMenu:checked ~ .filter-wrapp{
+        display: block;
+    }
+    aside label.toggleMenu{
+        display: block;
     }
 
 }
