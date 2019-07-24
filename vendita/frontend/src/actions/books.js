@@ -6,6 +6,7 @@ import {
     GET_BOOKS_BY_GENRES,
     SORT_BOOKS_BY_PRICE,
     SORT_BOOKS_BY_PAGES,
+    SEARCH_BOOKS,
 } from './types';
 
 
@@ -60,5 +61,13 @@ export const sortBooksByPages = (books, reverse) => dispatch => {
     dispatch({
         type: SORT_BOOKS_BY_PAGES,
         payload: reverse ? res.reverse() : res
+    });
+}
+
+export const searchBooks = (books, value) => dispatch => {
+    let res = books.filter(book => book.name.toLocaleLowerCase().includes(value.toLocaleLowerCase()))
+    dispatch({
+        type: SEARCH_BOOKS,
+        payload: res
     });
 }
