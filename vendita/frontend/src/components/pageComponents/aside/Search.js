@@ -8,8 +8,6 @@ import { Link, Redirect } from "react-router-dom";
 class Search extends Component {
     static propTypes = {
         books: PropTypes.array.isRequired,
-
-
         searchBooks: PropTypes.func.isRequired,
     }
     componentWillMount() {
@@ -29,8 +27,8 @@ class Search extends Component {
             <div>
                 <form onSubmit={this.props.searchBooks(this.props.books, this.state.searchField)}
                     action="/vendita/books">
-                    <input type="text" name="searchField" placeholder="Search now!" onChange={this.handleChange} />
-                    <Link className="link"
+                    <input className="serchField" type="text" name="searchField" placeholder="Search now!" onChange={this.handleChange} />
+                    <Link className="serchButton"
                         onClick={() => this.props.searchBooks(this.props.books, this.state.searchField)}
                         to="/vendita/books">Search</Link>
                 </form>
