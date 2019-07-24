@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getBooksByGenre, sortBooksByPrice, sortBooksByPages } from '../../../actions/books';
+import {
+    getBooksByGenre,
+    sortBooksByPrice,
+    sortBooksByPages,
+    getBooks,
+} from '../../../actions/books';
 import css from './Aside.css'
 import { Link } from "react-router-dom";
 
@@ -15,9 +20,13 @@ class Aside extends Component {
         hoot_books: PropTypes.array.isRequired,
         sorted_books: PropTypes.array.isRequired,
 
+        getBooks: PropTypes.func.isRequired,
         getBooksByGenre: PropTypes.func.isRequired,
         sortBooksByPrice: PropTypes.func.isRequired,
         sortBooksByPages: PropTypes.func.isRequired,
+    }
+    componentWillMount() {
+        this.props.getBooks();
     }
 
     render() {
@@ -80,4 +89,4 @@ const mapStateToProps = state => ({
     sorted_books: state.booksReducer.sorted_books,
 });
 
-export default connect(mapStateToProps, { getBooksByGenre, sortBooksByPrice, sortBooksByPages })(Aside);
+export default connect(mapStateToProps, { getBooks, getBooksByGenre, sortBooksByPrice, sortBooksByPages })(Aside);

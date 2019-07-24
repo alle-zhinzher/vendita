@@ -2,7 +2,7 @@
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
 //Redux
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import store from '../store';
 //React Router
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -10,16 +10,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from './pageComponents/header/Header';
 import Aside from './pageComponents/aside/Aside';
 import Slider from './pageComponents/slider/Slider';
-import About from './pages/about/About';
-import BookList from './pages/bookList/BookList';
+import About from './pageComponents/about/About';
+import BookList from './pageComponents/bookList/BookList';
 import Footer from './pageComponents/footer/Footer';
-
 // CSS
 import css from './Main.css'
 
 
-export default class App extends Component {
-
+class App extends Component {
     render() {
         return (
             <Router>
@@ -38,3 +36,4 @@ export default class App extends Component {
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
+
