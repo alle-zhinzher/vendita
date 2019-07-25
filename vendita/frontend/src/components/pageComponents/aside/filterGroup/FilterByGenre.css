@@ -1,0 +1,39 @@
+.filter-wrapp h2 {
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: -15px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgb(122, 117, 117);
+}
+
+.category {
+    margin-left: 25px;
+}
+
+.category h4 {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.asideButton {
+    text-align: center;
+    display: block;
+    min-height: 30px;
+    width: 85%;
+    padding-top: 5px;
+    margin-left: 15px;
+    margin-right: 10%;
+    margin-bottom: 3px;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.asideButton:hover {
+    background-color: rgb(65, 67, 70);
+    color: rgb(226, 211, 183);
+
+}

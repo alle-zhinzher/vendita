@@ -1,51 +1,13 @@
- aside {
+aside {
      width: 20%;
- }
- .filter-wrapp {
+}
+
+.filter-wrapp {
     width: 100%;
     height: 650px;
     background-color: rgb(160, 160, 161);
     border-right: 2px solid black;
     text-align: left ;
-}
-
-.filter-wrapp h2 {
-    font-weight: bold;
-    font-size: 25px;
-    margin-left: 10px;
-    padding-top: 10px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgb(122, 117, 117);
-}
-
-.category {
-    margin-left: 25px;
-}
-
-.category h4 {
-    font-weight: bold;
-    font-size: 20px;
-    margin: 5px 0;
-}
-
-.asideButton {
-    text-align: center;
-    display: block;
-    min-height: 30px;
-    width: 85%;
-    padding-top: 5px;
-    margin-left: 15px;
-    margin-right: 10%;
-    margin-bottom: 3px;
-    border: 1px solid black;
-    font-weight: bold;
-    font-size: 14px;
-    text-decoration: none;
-}
-.asideButton:hover {
-    background-color: rgb(65, 67, 70);
-    color: rgb(226, 211, 183);
-
 }
 
 aside label.toggleMenu{
@@ -63,44 +25,12 @@ aside label.toggleSubmenu{
     display: none;
 }
 
-.serchField {
-    margin-left: -15px;
-    width: 100%;
-    height: 30px;
-    padding: 3px;
-    padding-left: 8px;
-    border: 2px solid rgb(77, 74, 74);
-    border-top-right-radius: 6%;
-    border-top-left-radius: 6%;
-    
-}
-.serchButton {
-    display: block;
-    text-align: center;
-    padding-top: 2px;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    width: 100%;
-    height: 30px;
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: -15px;
-    background-color: rgb(174, 189, 221);
-    border: 2px solid rgb(77, 74, 74);
-    border-top: none;
-    border-bottom-right-radius: 6%;
-    border-bottom-left-radius: 6%;
-}
-.serchButton:hover {
-    background-color: rgb(35, 58, 109);
-    color: rgb(224, 211, 211);
-}
-
-
 @media screen and (max-width: 1050px) {
+
     aside {
         width: 100%;
     }
+
     .filter-wrapp {
         display: none;
         width: 100%;
@@ -108,9 +38,11 @@ aside label.toggleSubmenu{
         border-right: none;
         border-bottom: 2px solod rgb(0, 0, 0);
     }
+
     input.toggleMenu:checked ~ .filter-wrapp{
         display: block;
     }
+
     aside label.toggleMenu{
         position: absolute;
         top: 50px;
@@ -118,5 +50,4 @@ aside label.toggleSubmenu{
         display: block;
         text-align: center;
     }
-
 }

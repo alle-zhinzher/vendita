@@ -1,0 +1,33 @@
+.serchField {
+    margin-left: -15px;
+    width: 100%;
+    height: 30px;
+    padding: 3px;
+    padding-left: 8px;
+    border: 2px solid rgb(77, 74, 74);
+    border-top-right-radius: 6%;
+    border-top-left-radius: 6%;
+}
+
+.serchButton {
+    display: block;
+    text-align: center;
+    padding-top: 2px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    height: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: -15px;
+    background-color: rgb(174, 189, 221);
+    border: 2px solid rgb(77, 74, 74);
+    border-top: none;
+    border-bottom-right-radius: 6%;
+    border-bottom-left-radius: 6%;
+}
+
+.serchButton:hover {
+    background-color: rgb(35, 58, 109);
+    color: rgb(224, 211, 211);
+}
