@@ -2,6 +2,7 @@ import {
     GET_BOOKS,
     GET_HOOT_BOOKS,
     GET_BOOKS_BY_GENRES,
+    GET_ALL_BOOKS,
     SORT_BOOKS_BY_PRICE,
     SORT_BOOKS_BY_PAGES,
     SEARCH_BOOKS,
@@ -24,6 +25,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 hoot_books: action.payload
+            }
+        case GET_ALL_BOOKS:
+            return {
+                ...state,
+                sorted_books: action.payload
             }
         case GET_BOOKS_BY_GENRES:
             return {

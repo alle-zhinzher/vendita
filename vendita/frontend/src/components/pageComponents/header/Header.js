@@ -29,8 +29,8 @@ function Header() {
                             <li><Link className="link" to="/books/">all</Link></li>
                         </ul>
                     </li>
-                    <li><Link className="link" to="vendita/about">about</Link></li>
-                    <li><Link className="link" to="vendita/about">register</Link></li>
+                    <li><Link className="link" to="/about">about</Link></li>
+                    <li><Link className="link" to="/about">register</Link></li>
 
                 </ul>
             </nav>

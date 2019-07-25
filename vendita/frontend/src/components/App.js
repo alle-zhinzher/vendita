@@ -26,8 +26,8 @@ class App extends Component {
                         <Header />
                         <Aside />
                         <Route path="/vendita" exact component={Slider} />
-                        <Route path="/vendita/books" exact component={BookList} />
-                        <Route path="/vendita/about" exact component={About} />
+                        <Route path="/vendita/books" component={BookList} />
+                        <Route path="/about" component={About} />
                     </div>
                     <Footer />
                 </Provider>

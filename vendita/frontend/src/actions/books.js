@@ -4,6 +4,7 @@ import {
     GET_BOOKS,
     GET_HOOT_BOOKS,
     GET_BOOKS_BY_GENRES,
+    GET_ALL_BOOKS,
     SORT_BOOKS_BY_PRICE,
     SORT_BOOKS_BY_PAGES,
     SEARCH_BOOKS,
@@ -45,6 +46,17 @@ export const getBooksByGenre = (genre) => dispatch => {
         })
         .catch(err => console.log(err));
 }
+// GET ALL BOOKS FOR VIEW
+export const getBooks = () => dispatch => {
+    axios.get("/api/books/")
+        .then(res => {
+            dispatch({
+                type: GET_ALL_BOOKS,
+                payload: res.data
+            });
+        })
+        .catch(err => console.log(err));
+}
 
 // SORT BOOKS BY PRICE
 export const sortBooksByPrice = (books, reverse) => dispatch => {
@@ -76,6 +88,7 @@ export const sortBooksByPages = (books, reverse) => dispatch => {
     });
 }
 
+// SEARCH BOOKS
 export const searchBooks = (books, value) => dispatch => {
     let res = books.filter(book => book.name.toLocaleLowerCase().includes(value.toLocaleLowerCase()))
     dispatch({
