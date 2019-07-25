@@ -15,21 +15,23 @@ function Header() {
                 <input type="checkbox" name="toggle" id="menu" className="toggleMenu" />
                 <label htmlFor="menu" className="toggleMenu"><img src="http://127.0.0.1:8000/media/profile_pics/burger.svg" /></label>
                 <ul>
-                    <li><Link className="link" to="/vendita/">Home</Link></li>
+                    <li><Link className="link" to="/vendita/">home</Link></li>
+                    <li><Link className="link" to="/vendita/books">books</Link></li>
                     <li>
                         <input type="checkbox" name="toggle" className="toggleSubmenu" id="sub_m1" />
-                        <span className="link" id="sub_m1">hot prices <span className="row">&#x203a;</span></span>
+                        <span className="link" id="sub_m1">genres <span className="row">&#x203a;</span></span>
                         <label htmlFor="sub_m1" className="toggleSubmenu"></label>
                         <ul>
-                            <li><Link className="link" to="/vendita/">Одежда</Link></li>
-                            <li><Link className="link" to="/vendita/">Продукты питания</Link></li>
-                            <li><Link className="link" to="/vendita/">Электроника</Link></li>
-                            <li><Link className="link" to="/vendita/">Быт. химия</Link></li>
-                            <li><Link className="link" to="/vendita/">Инструменты</Link></li>
+                            <li><Link className="link" to="/books/">romans</Link></li>
+                            <li><Link className="link" to="/books/">historycal</Link></li>
+                            <li><Link className="link" to="/books/">novell</Link></li>
+                            <li><Link className="link" to="/books/">fanasy</Link></li>
+                            <li><Link className="link" to="/books/">all</Link></li>
                         </ul>
                     </li>
-                    <li><Link className="link" to="/about">About</Link></li>
-                    <li><Link className="link" to="/topics">Topics</Link></li>
+                    <li><Link className="link" to="vendita/about">about</Link></li>
+                    <li><Link className="link" to="vendita/about">register</Link></li>
+
                 </ul>
             </nav>
         </header>

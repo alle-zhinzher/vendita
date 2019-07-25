@@ -14,7 +14,7 @@ import About from './pageComponents/about/About';
 import BookList from './pageComponents/bookList/BookList';
 import Footer from './pageComponents/footer/Footer';
 // CSS
-import css from './Main.css'
+import css from './App.css'
 
 
 class App extends Component {
@@ -27,6 +27,7 @@ class App extends Component {
                         <Aside />
                         <Route path="/vendita" exact component={Slider} />
                         <Route path="/vendita/books" exact component={BookList} />
+                        <Route path="/vendita/about" exact component={About} />
                     </div>
                     <Footer />
                 </Provider>

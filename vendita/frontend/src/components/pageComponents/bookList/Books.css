@@ -173,29 +173,11 @@
 
 
 @media screen and (max-width: 1050px) {
-    .book-list {
-        overflow-x: auto;
-        height: 560px;
-        width: 80%;
-        margin: 0 auto;
-        padding: 10px;
+    .content-section {
+        width: 100%;
+        padding-top: 70px;
+        height: 700px;
     }
-    .book-cart{
-        width: 75%;
-        height: 550px;
-        margin-bottom: 10px;
-    }
-    .book-cart-image img {
-        width: 65%;
-        height: 290px;
-    }
-    .book-name {
-        height: 30px;
-    }
-    .book-discripion p {
-        height: 50px;
-    }
-
     .paginator {
         margin-top: 20px;
     }
@@ -208,11 +190,22 @@
         width: 100%;
 
     }
-     .book-list {
+    .book-list {
+        overflow-x: auto;
+        height: 560px;
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .book-cart-image img {
+        width: 65%;
+    }
+    .book-list {
         width: 94%;
     }
     .book-cart{
         width: 90%;
+        margin-bottom: 15px;
     }
     .cart-buy {
         height: 40px;
