@@ -54,16 +54,16 @@ class BookList extends Component {
                     )}
                 </section>
                 <section className="paginator">
-                    <button className={page === 1 ? "disable" : "paginator-button"} onClick={() => this.prev_page()}>&#x2039;</button>
+                    <button className={page === 1 ? "disable" : "paginator-scroll"} onClick={() => this.prev_page()}>&#x2039;</button>
 
-                    <button className={page === 1 ? "disable" : "paginator-button"} onClick={() => this.change_page(this.state.active_page - 1)}>
+                    <button className={page === 1 ? "disable" : ""} onClick={() => this.change_page(this.state.active_page - 1)}>
                         {this.state.active_page - 1}</button>
-                    <button className="paginator-button paginator-active">
+                    <button id="paginator-active">
                         {this.state.check_lenght === itemCount ? this.state.active_page : this.new_paginator()}</button>
-                    <button className={page >= itemCount / 4 ? "disable" : "paginator-button"} onClick={() => this.change_page(this.state.active_page + 1)}>
+                    <button className={page >= itemCount / 4 ? "disable" : ""} onClick={() => this.change_page(this.state.active_page + 1)}>
                         {this.state.active_page + 1}</button>
 
-                    <button className={page >= itemCount / 4 ? "disable" : "paginator-button"} onClick={() => this.next_page()}>&#x203a;</button>
+                    <button className={page >= itemCount / 4 ? "disable" : "paginator-scroll"} onClick={() => this.next_page()}>&#x203a;</button>
                 </section >
 
             </section >

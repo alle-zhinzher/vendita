@@ -1,6 +1,5 @@
 .book-list {
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin: 15px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -9,7 +8,7 @@
 .book-cart{
     position: relative;
     width: 23%;
-    height: 520px;
+    height: 550px;
     border: 2px solid grey;
     border-radius: 10px;
 }
@@ -29,7 +28,7 @@
 
 .book-name {
     position: relative;
-    min-height: 65px;
+    min-height: 70px;
     border-bottom: 1px solid gray;
 }
 
@@ -113,6 +112,112 @@
     display: block;
 }
 
-.paginator-active {
-    background-color: burlywood; 
+
+.paginator > button {
+    font-weight: bold;
+    width: 40px;
+    height: 25px;
+    background-color: rgb(179, 164, 147);
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+}
+
+.paginator > button:hover {
+    background-color: rgb(136, 126, 114);
+    color: rgb(248, 224, 178);
+}
+
+.paginator > button.paginator-scroll{
+    width: 60px;
+    font-weight: bold;
+}   
+
+
+#paginator-active {
+    font-size: 16px;
+    background-color: rgb(243, 216, 181); 
+}
+#paginator-active:hover {
+    background-color: rgb(136, 173, 155); 
+    color: black;
+}
+
+
+.book-list::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.book-list::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.book-list::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+@media screen and (max-width: 1200px) {
+    .sale {
+        font-size: 14px;
+        width: 30px;
+        margin-left: 2px;
+    }   
+}
+
+
+@media screen and (max-width: 1050px) {
+    .book-list {
+        overflow-x: auto;
+        height: 560px;
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .book-cart{
+        width: 75%;
+        height: 550px;
+        margin-bottom: 10px;
+    }
+    .book-cart-image img {
+        width: 65%;
+        height: 290px;
+    }
+    .book-name {
+        height: 30px;
+    }
+    .book-discripion p {
+        height: 50px;
+    }
+
+    .paginator {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content-section {
+        min-height: 700px;
+        padding-top: 70px;
+        width: 100%;
+
+    }
+     .book-list {
+        width: 94%;
+    }
+    .book-cart{
+        width: 90%;
+    }
+    .cart-buy {
+        height: 40px;
+    }
+    .paginator {
+        margin-top: 20px;
+    }
 }
