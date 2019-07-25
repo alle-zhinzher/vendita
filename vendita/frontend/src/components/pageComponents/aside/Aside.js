@@ -32,10 +32,12 @@ class Aside extends Component {
     render() {
         return (
             <aside>
+
                 <input type="checkbox" name="toggle" id="aside" className="toggleMenu" />
                 <label htmlFor="aside" className="toggleMenu">
                     <img src="http://127.0.0.1:8000/media/profile_pics/search.svg" />
                 </label>
+
                 <div className="filter-wrapp">
                     <h2>Filter by:</h2>
                     <div className="category">
@@ -53,30 +55,31 @@ class Aside extends Component {
                             onClick={() => this.props.getBooksByGenre("fantasy")}
                             to="/vendita/books">Fantasy</Link>
                     </div>
+
                     <h2>Sort by:</h2>
                     <div className="category">
                         <h4>Price:</h4>
                         <Link className="asideButton"
-                            onClick={() => this.props.sortBooksByPrice(this.props.sorted_books.length ? this.props.sorted_books : this.props.books, false)}
+                            onClick={() => this.props.sortBooksByPrice(this.props.sorted_books, false)}
                             to="/vendita/books">From lesser to greater</Link>
                         <Link className="asideButton"
-                            onClick={() => this.props.sortBooksByPrice(this.props.sorted_books.length ? this.props.sorted_books : this.props.books, true)}
+                            onClick={() => this.props.sortBooksByPrice(this.props.sorted_books, true)}
                             to="/vendita/books">From greater to lesser</Link>
                         <h4>Pages:</h4>
                         <Link className="asideButton"
-                            onClick={() => this.props.sortBooksByPages(this.props.sorted_books.length ? this.props.sorted_books : this.props.books, false)}
+                            onClick={() => this.props.sortBooksByPages(this.props.sorted_books, false)}
                             to="/vendita/books">From lesser to greater</Link>
                         <Link className="asideButton"
-                            onClick={() => this.props.sortBooksByPages(this.props.sorted_books.length ? this.props.sorted_books : this.props.books, true)}
+                            onClick={() => this.props.sortBooksByPages(this.props.sorted_books, true)}
                             to="/vendita/books">From greater to lesser</Link>
                     </div>
+
                     <h2>Search:</h2>
                     <div className="category">
                         <Search />
                     </div>
 
                 </div>
-
             </aside >
         )
     }

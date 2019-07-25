@@ -25,20 +25,18 @@ class Slider extends Component {
     }
 
     nextItem() {
-        if (this.state.active_index === this.props.hoot_books.length - 1) {
-            this.setState({ active_index: 0 })
-        } else {
-            this.setState({ active_index: this.state.active_index + 1 })
+        let index = this.state.active_index;
+        if (index === this.props.hoot_books.length - 1) {
+            index = -1;
         }
-        console.log(this.state.active_index)
+        this.setState({ active_index: index + 1 })
     }
     prevItem() {
-        if (this.state.active_index === 0) {
-            this.setState({ active_index: this.props.hoot_books.length - 1 })
-        } else {
-            this.setState({ active_index: this.state.active_index - 1 })
+        let index = this.state.active_index;
+        if (index === 0) {
+            index = this.props.hoot_books.length
         }
-        console.log(this.state.active_index)
+        this.setState({ active_index: index - 1 })
     }
 
     render() {
