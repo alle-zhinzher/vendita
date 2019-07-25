@@ -48,7 +48,19 @@ export const getBooksByGenre = (genre) => dispatch => {
 
 // SORT BOOKS BY PRICE
 export const sortBooksByPrice = (books, reverse) => dispatch => {
-    let res = books.sort((book1, book2) => book1.cost - book2.cost)
+    let res = books.sort((book1, book2) =>
+        book1.is_hot_price ?
+            book2.is_hot_price ?
+                book1.cost * 0.75 - book2.cost * 0.75
+                :
+                book1.cost * 0.75 - book2.cost
+            :
+            book2.is_hot_price ?
+                book1.cost - book2.cost * 0.75
+                :
+                book1.cost - book2.cost
+    )
+
     dispatch({
         type: SORT_BOOKS_BY_PRICE,
         payload: reverse ? res.reverse() : res

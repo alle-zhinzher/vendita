@@ -7,6 +7,7 @@
 }
 
 .book-cart{
+    position: relative;
     width: 23%;
     height: 520px;
     border: 2px solid grey;
@@ -27,15 +28,86 @@
 }
 
 .book-name {
-    height: 100px;
+    position: relative;
+    min-height: 65px;
     border-bottom: 1px solid gray;
 }
 
 .book-name h4{ 
+    position: absolute;
     color:rgb(10, 10, 10);
-    margin-left: 20px;
+    bottom: 5px;
+    right: 0;
+    margin-right: 10px;
+}
+.cart-book-author {
+    color:rgb(59, 55, 55);
+}
+.book-discripion p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 70px;
+    padding: 5px;
+
+}
+.book-discripion h4{
+    margin-left: 50%;
+}
+.book-diskription-title {
+    font-weight: bold;
+    color:rgb(10, 10, 10);
 }
 
+.book-price {
+    font-size: 25px;   
+}
+
+.cart-prices {
+    margin-top: 15px;
+}
+
+.cart-current-price {
+    position: relative;
+    font-weight: bold;
+    color: rgb(16, 75, 16);
+}
+
+.sale {
+    position: absolute;
+    top: 10px;
+    height: 15px;
+    width: 40px;
+    background-color: brown;
+    color: aliceblue;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: -15px;
+    margin-left: 5px;
+    border: 1px solid rgb(180, 154, 7);
+    border-radius: 3px;
+}
+.cart-buy {
+    font-size: 18px;
+    background-color: rgb(160, 160, 160);
+    border-color: rgb(87, 87, 87);
+    position: absolute;
+    bottom: 10px;
+    left: 5%;
+    width: 90%;
+}
+.cart-buy img {
+    height: 20px;
+    width: 35px;
+}
+
+.cart-buy:hover {
+    background-color: rgb(108, 117, 92);
+    color: rgb(206, 199, 186);
+    
+}
+.cart-price {
+    color: rgb(3, 3, 3);
+}
 
 .active-page {
     display: block;

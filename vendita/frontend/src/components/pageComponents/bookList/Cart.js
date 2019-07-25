@@ -18,16 +18,31 @@ class Cart extends Component {
                 </div>
                 <div className="book-name">
                     <h3>{this.props.book.name}</h3>
-                    <h4>{this.props.book.author}</h4>
+                    <h4><span className="cart-book-author">Author: </span>{this.props.book.author}</h4>
                 </div>
                 <div className="book-discripion">
-                    <p>{this.props.book.discrition}</p>
-                    <h4>{this.props.book.pages}- pages</h4>
+                    <p><span className="book-diskription-title">Discripion: </span>{this.props.book.discrition.substr(0, 75)}...</p>
+                    <h4><span className="book-pages">{this.props.book.pages}</span> - pages</h4>
                 </div>
+                <div className="cart-prices">
+                    <h2>Price: <span className="book-price">
+                        {this.props.book.is_hot_price ?
 
-                <h2>Price: <span className="book-price">{this.props.book.cost}$</span></h2>
+                            <span className="cart-current-price">
+                                {this.props.book.cost * 0.75}
+                                <span className="sale">25%</span>
+                            </span>
 
-            </div>
+                            :
+                            <span className="cart-price">{this.props.book.cost}</span>
+                        }
+                    </span></h2>
+                </div>
+                <button className="btn-buy cart-buy">
+                    <img src="http://127.0.0.1:8000/media/profile_pics/shopping-cart.svg" alt="Logo" />
+                </button>
+
+            </div >
         )
     }
 }
