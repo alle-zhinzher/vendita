@@ -12,6 +12,7 @@ class Cart extends Component {
             "disable"
 
         return (
+
             <div className={page_status}>
                 <div className="book-cart-image">
                     <img src={this.props.book.image} alt="book image" />
