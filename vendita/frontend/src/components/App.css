@@ -5,21 +5,21 @@
     color: #454547;
 }
 
-.link:hover{
-    color: #ffffff;
-}
-
-
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
+.content-section {
+    width: 80%;
+    height: 650px;
+    background-color: rgb(168, 168, 168);
+    text-align: center;
+}
 
 @media screen and (max-width: 440px) {
     .container {
         flex-direction: column;
     }
-
 }

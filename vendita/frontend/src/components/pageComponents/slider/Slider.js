@@ -1,53 +1,55 @@
 import React, { Component } from 'react'
-import css from './Slider.css'
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getHootBooks, getBooks } from '../../../actions/books';
-
-import Slide from "./Slide"
-
+//Redux
+import { connect } from 'react-redux';
+// Reducer methods
+import { getHootBooks } from '../../../actions/books';
+import { nextSlide, prevSlide } from '../../../actions/slider';
+//Components
+import Slide from "./slide/Slide"
+import SlideControler from './sliderControler/SlideControler';
+// CSS styles
+import css from './Slider.css'
 
 class Slider extends Component {
 
     static propTypes = {
         hoot_books: PropTypes.array.isRequired,
-        getHootBooks: PropTypes.func.isRequired,
-        getBooks: PropTypes.func.isRequired,
+        activeSlide: PropTypes.number.isRequired,
 
+        getHootBooks: PropTypes.func.isRequired,
+        nextSlide: PropTypes.func.isRequired,
+        prevSlide: PropTypes.func.isRequired,
     }
+
     componentWillMount() {
         this.props.getHootBooks();
-        this.props.getBooks();
-
-        this.setState({
-            active_index: 0
-        })
-    }
-
-    nextItem() {
-        let index = this.state.active_index;
-        if (index === this.props.hoot_books.length - 1) {
-            index = -1;
-        }
-        this.setState({ active_index: index + 1 })
-    }
-    prevItem() {
-        let index = this.state.active_index;
-        if (index === 0) {
-            index = this.props.hoot_books.length
-        }
-        this.setState({ active_index: index - 1 })
     }
 
     render() {
+        const activeSlide = this.props.activeSlide;
+        const slideLength = this.props.hoot_books.length;
+
+        const slides = this.props.hoot_books
+            .map((book, index = 0) =>
+                <Slide key={book.id} book={book} index={index++} active_index={activeSlide} />
+            );
         return (
             <section className="content-section slider">
                 <div className="slide">
-                    <button className="slider-controler" onClick={() => this.prevItem()}>&#x2039;</button>
-                    {this.props.hoot_books.map((book, index = 0) =>
-                        <Slide key={book.id} book={book} index={index++} active_index={this.state.active_index} />
-                    )}
-                    <button className="slider-controler" onClick={() => this.nextItem()}>&#x203a;</button>
+                    <SlideControler
+                        activeSlide={activeSlide}
+                        slideLength={slideLength}
+                        hendleFunc={this.props.prevSlide}
+                        controlerText={'<'}
+                    />
+                    {slides}
+                    <SlideControler
+                        activeSlide={activeSlide}
+                        slideLength={slideLength}
+                        hendleFunc={this.props.nextSlide}
+                        controlerText={'>'}
+                    />
                 </div>
             </section>
         )
@@ -56,6 +58,7 @@ class Slider extends Component {
 
 const mapStateToProps = state => ({
     hoot_books: state.booksReducer.hoot_books,
+    activeSlide: state.sliderReducer.activeSlide,
 });
 
-export default connect(mapStateToProps, { getHootBooks, getBooks })(Slider);
+export default connect(mapStateToProps, { getHootBooks, nextSlide, prevSlide })(Slider);

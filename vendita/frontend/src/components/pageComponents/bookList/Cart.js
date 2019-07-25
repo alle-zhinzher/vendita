@@ -30,12 +30,12 @@ class Cart extends Component {
                         {this.props.book.is_hot_price ?
 
                             <span className="cart-current-price">
-                                {this.props.book.cost * 0.75}
+                                {this.props.book.cost * 0.75}$
                                 <span className="sale">25%</span>
                             </span>
 
                             :
-                            <span className="cart-price">{this.props.book.cost}</span>
+                            <span className="cart-price">{this.props.book.cost}$</span>
                         }
                     </span></h2>
                 </div>
