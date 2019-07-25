@@ -17,8 +17,7 @@ class Aside extends Component {
 
     static propTypes = {
         books: PropTypes.array.isRequired,
-        hoot_books: PropTypes.array.isRequired,
-        sorted_books: PropTypes.array.isRequired,
+        sortedBooks: PropTypes.array.isRequired,
 
         getBooks: PropTypes.func.isRequired,
         getBooksByGenre: PropTypes.func.isRequired,
@@ -60,17 +59,17 @@ class Aside extends Component {
                     <div className="category">
                         <h4>Price:</h4>
                         <Link className="asideButton"
-                            onClick={() => this.props.sortBooksByPrice(this.props.sorted_books, false)}
+                            onClick={() => this.props.sortBooksByPrice(this.props.sortedBooks, false)}
                             to="/vendita/books">From lesser to greater</Link>
                         <Link className="asideButton"
-                            onClick={() => this.props.sortBooksByPrice(this.props.sorted_books, true)}
+                            onClick={() => this.props.sortBooksByPrice(this.props.sortedBooks, true)}
                             to="/vendita/books">From greater to lesser</Link>
                         <h4>Pages:</h4>
                         <Link className="asideButton"
-                            onClick={() => this.props.sortBooksByPages(this.props.sorted_books, false)}
+                            onClick={() => this.props.sortBooksByPages(this.props.sortedBooks, false)}
                             to="/vendita/books">From lesser to greater</Link>
                         <Link className="asideButton"
-                            onClick={() => this.props.sortBooksByPages(this.props.sorted_books, true)}
+                            onClick={() => this.props.sortBooksByPages(this.props.sortedBooks, true)}
                             to="/vendita/books">From greater to lesser</Link>
                     </div>
 
@@ -88,8 +87,7 @@ class Aside extends Component {
 
 const mapStateToProps = state => ({
     books: state.booksReducer.books,
-    hoot_books: state.booksReducer.hoot_books,
-    sorted_books: state.booksReducer.sorted_books,
+    sortedBooks: state.booksReducer.sortedBooks,
 });
 
 export default connect(mapStateToProps, { getBooks, getBooksByGenre, sortBooksByPrice, sortBooksByPages })(Aside);

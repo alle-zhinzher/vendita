@@ -11,26 +11,23 @@ import SlideControler from './sliderControler/SlideControler';
 // CSS styles
 import css from './Slider.css'
 
-class Slider extends Component {
 
+class Slider extends Component {
     static propTypes = {
-        hoot_books: PropTypes.array.isRequired,
+        hootBooks: PropTypes.array.isRequired,
         activeSlide: PropTypes.number.isRequired,
 
         getHootBooks: PropTypes.func.isRequired,
         nextSlide: PropTypes.func.isRequired,
         prevSlide: PropTypes.func.isRequired,
     }
-
     componentWillMount() {
         this.props.getHootBooks();
     }
-
     render() {
         const activeSlide = this.props.activeSlide;
-        const slideLength = this.props.hoot_books.length;
-
-        const slides = this.props.hoot_books
+        const slideLength = this.props.hootBooks.length;
+        const slides = this.props.hootBooks
             .map((book, index = 0) =>
                 <Slide key={book.id} book={book} index={index++} active_index={activeSlide} />
             );
@@ -57,7 +54,7 @@ class Slider extends Component {
 }
 
 const mapStateToProps = state => ({
-    hoot_books: state.booksReducer.hoot_books,
+    hootBooks: state.booksReducer.hootBooks,
     activeSlide: state.sliderReducer.activeSlide,
 });
 

@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
-import css from './Header.css'
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+//Router
+import { Link } from "react-router-dom";
+//Redux
+import { connect } from 'react-redux';
+//Reducers
 import { getBooksByGenre, getAllBooks } from '../../../actions/books';
+//CSS Styles
+import css from './Header.css'
+
 
 class Header extends Component {
     static propTypes = {
@@ -64,9 +69,5 @@ class Header extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    hoot_books: state.booksReducer.hoot_books,
-});
-
-export default connect(mapStateToProps, { getAllBooks, getBooksByGenre })(Header);
+export default connect(null, { getAllBooks, getBooksByGenre })(Header);
 

@@ -10,8 +10,8 @@ import {
 
 const initialState = {
     books: [],
-    hoot_books: [],
-    sorted_books: []
+    hootBooks: [],
+    sortedBooks: []
 }
 
 export default function (state = initialState, action) {
@@ -24,35 +24,33 @@ export default function (state = initialState, action) {
         case GET_HOOT_BOOKS:
             return {
                 ...state,
-                hoot_books: action.payload
+                hootBooks: action.payload
             }
         case GET_ALL_BOOKS:
             return {
                 ...state,
-                sorted_books: action.payload
+                sortedBooks: action.payload
             }
         case GET_BOOKS_BY_GENRES:
             return {
                 ...state,
-                sorted_books: action.payload
+                sortedBooks: action.payload
             }
         case SORT_BOOKS_BY_PRICE:
             return {
                 ...state,
-                sorted_books: action.payload
+                sortedBooks: action.payload
             }
         case SORT_BOOKS_BY_PAGES:
             return {
                 ...state,
-                sorted_books: action.payload
+                sortedBooks: action.payload
             }
         case SEARCH_BOOKS:
             return {
                 ...state,
-                sorted_books: action.payload
+                sortedBooks: action.payload
             }
-
-
         default:
             return state;
     }
