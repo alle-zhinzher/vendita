@@ -47,7 +47,7 @@ export const getBooksByGenre = (genre) => dispatch => {
         .catch(err => console.log(err));
 }
 // GET ALL BOOKS FOR VIEW
-export const getBooks = () => dispatch => {
+export const getAllBooks = () => dispatch => {
     axios.get("/api/books/")
         .then(res => {
             dispatch({
