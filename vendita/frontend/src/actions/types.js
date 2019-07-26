@@ -6,9 +6,18 @@ export const SORT_BOOKS_BY_PRICE = "SORT_BOOKS_BY_PRICE";
 export const SORT_BOOKS_BY_PAGES = "SORT_BOOKS_BY_PAGES";
 export const SEARCH_BOOKS = "SEARCH_BOOKS";
 
+
 //SLIDER TYPES
 export const GET_NEXT_SLIDE = "GET_NEXT_SLIDE";
 export const GET_PREV_SLIDE = "GET_PREV_SLIDE";
+
+
+//PAGINATOR TYPES
+export const GET_NEXT_PAGE = "GET_NEXT_SLIDE";
+export const GET_PREV_PAGE = "GET_PREV_SLIDE";
+export const JUMP_TO_PAGE = "JUMP_TO_PAGE";
+export const RESET_PAGINATOR = "RESET_PAGINATOR";
+
 
 
 

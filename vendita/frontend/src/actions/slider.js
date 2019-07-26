@@ -1,10 +1,7 @@
-
 import {
     GET_NEXT_SLIDE,
     GET_PREV_SLIDE,
 } from './types';
-
-
 
 
 export const nextSlide = (activeSlide, maxValue) => dispatch => {
