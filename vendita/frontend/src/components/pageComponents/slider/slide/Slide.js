@@ -5,11 +5,11 @@ import css from './Slide.css'
 
 class Slide extends Component {
     render() {
-        const slide_status = this.props.active_index === this.props.index ?
+        const slideStatus = this.props.activeSlide === this.props.index ?
             "active" : "disable"
 
         return (
-            <div className={slide_status}>
+            <div className={slideStatus}>
                 <div className="book-image">
                     <img src={this.props.book.image} alt="slider-image" />
                 </div>

@@ -29,7 +29,7 @@ class Slider extends Component {
         const slideLength = this.props.hootBooks.length;
         const slides = this.props.hootBooks
             .map((book, index = 0) =>
-                <Slide key={book.id} book={book} index={index++} active_index={activeSlide} />
+                <Slide key={book.id} book={book} index={index++} activeSlide={activeSlide} />
             );
         return (
             <section className="content-section slider">
@@ -40,7 +40,9 @@ class Slider extends Component {
                         hendleFunc={this.props.prevSlide}
                         controlerText={'<'}
                     />
+
                     {slides}
+
                     <SlideControler
                         activeSlide={activeSlide}
                         slideLength={slideLength}

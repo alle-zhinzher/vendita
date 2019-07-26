@@ -18,7 +18,6 @@ import css from './Aside.css';
 
 
 class Aside extends Component {
-
     static propTypes = {
         books: PropTypes.array.isRequired,
         sortedBooks: PropTypes.array.isRequired,
