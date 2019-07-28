@@ -30,13 +30,14 @@ class BookList extends Component {
 
 
     render() {
+        const bookPage = this.props.sortedBooks.map((book, index = 1) =>
+            <Cart key={book.id} book={book} index={index++} active_page={this.props.activePage} />
+        )
         return (
 
             <section className="content-section" >
-                <section className="book-list">
-                    {this.props.sortedBooks.map((book, index = 1) =>
-                        <Cart key={book.id} book={book} index={index++} active_page={this.props.activePage} />
-                    )}
+                <section className="book-page">
+                    {bookPage}
                 </section>
 
                 {this.props.sortedBooks.length === 0 ?

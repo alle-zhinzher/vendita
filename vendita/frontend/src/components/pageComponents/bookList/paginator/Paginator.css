@@ -27,3 +27,11 @@ button.paginator-active {
     background-color: rgb(136, 173, 155); 
     color: black;
 }
+
+
+@media screen and (max-width: 800px) {
+
+    .paginator {
+        margin-top: 20px;
+    }
+}

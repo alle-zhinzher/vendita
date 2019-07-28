@@ -38,7 +38,7 @@
 .book-discripion p{
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 70px;
+    height: 80px;
     padding: 5px;
 
 }
@@ -135,7 +135,7 @@
         width: 100%;
 
     }
-    .book-list {
+    .book-page {
         overflow-x: auto;
         height: 560px;
         width: 80%;
@@ -145,7 +145,7 @@
     .book-cart-image img {
         width: 220px;
     }
-    .book-list {
+    .book-page {
         width: 94%;
     }
     .book-cart{
