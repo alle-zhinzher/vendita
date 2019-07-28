@@ -1,0 +1,161 @@
+.book-cart{
+    position: relative;
+    width: 23%;
+    height: 550px;
+    border: 2px solid grey;
+    border-radius: 10px;
+}
+
+.book-cart-image{
+    width: 90%;
+    margin: 10px auto;
+
+}
+
+.book-cart-image img {
+    width: 100%;
+    height: 250px;
+    border: 1px solid rgb(10, 10, 10);
+    border-radius: 10px;
+}
+
+.book-name {
+    position: relative;
+    min-height: 70px;
+    border-bottom: 1px solid gray;
+}
+
+.book-name h4{ 
+    position: absolute;
+    color:rgb(10, 10, 10);
+    bottom: 5px;
+    right: 0;
+    margin-right: 10px;
+}
+.cart-book-author {
+    color:rgb(59, 55, 55);
+}
+.book-discripion p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 70px;
+    padding: 5px;
+
+}
+.book-discripion h4{
+    margin-left: 50%;
+}
+.book-diskription-title {
+    font-weight: bold;
+    color:rgb(10, 10, 10);
+}
+
+.book-price {
+    font-size: 25px;   
+}
+
+.cart-prices {
+    margin-top: 15px;
+}
+
+.cart-current-price {
+    position: relative;
+    font-weight: bold;
+    color: rgb(16, 75, 16);
+}
+
+.sale {
+    position: absolute;
+    top: 10px;
+    height: 15px;
+    width: 40px;
+    background-color: brown;
+    color: aliceblue;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: -15px;
+    margin-left: 5px;
+    border: 1px solid rgb(180, 154, 7);
+    border-radius: 3px;
+}
+.cart-buy {
+    font-size: 18px;
+    background-color: rgb(160, 160, 160);
+    border-color: rgb(87, 87, 87);
+    position: absolute;
+    bottom: 10px;
+    left: 5%;
+    width: 90%;
+}
+.cart-buy img {
+    height: 20px;
+    width: 35px;
+}
+
+.cart-buy:hover {
+    background-color: rgb(108, 117, 92);
+    color: rgb(206, 199, 186);
+    
+}
+
+.cart-price {
+    color: rgb(3, 3, 3);
+}
+
+.active-page {
+    display: block;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .sale {
+        font-size: 14px;
+        width: 30px;
+        margin-left: 2px;
+    }   
+}
+
+
+@media screen and (max-width: 1050px) {
+    .content-section {
+        width: 100%;
+        padding-top: 70px;
+        height: 700px;
+    }
+    .paginator {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .content-section {
+        min-height: 700px;
+        padding-top: 70px;
+        width: 100%;
+
+    }
+    .book-list {
+        overflow-x: auto;
+        height: 560px;
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    .book-cart-image img {
+        width: 220px;
+    }
+    .book-list {
+        width: 94%;
+    }
+    .book-cart{
+        width: 90%;
+        margin-bottom: 15px;
+    }
+    .cart-buy {
+        height: 40px;
+    }
+    .paginator {
+        margin-top: 20px;
+    }
+}

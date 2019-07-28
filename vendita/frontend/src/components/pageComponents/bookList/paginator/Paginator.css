@@ -1,0 +1,29 @@
+.paginator > button {
+    font-weight: bold;
+    width: 40px;
+    height: 25px;
+    background-color: rgb(179, 164, 147);
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+}
+
+.paginator > button:hover {
+    background-color: rgb(136, 126, 114);
+    color: rgb(248, 224, 178);
+}
+
+.paginator > button.paginator-scroll{
+    width: 60px;
+    font-weight: bold;
+}   
+
+
+button.paginator-active {
+    font-size: 16px;
+    background-color: rgb(243, 216, 181); 
+}
+.paginator-active:hover {
+    background-color: rgb(136, 173, 155); 
+    color: black;
+}

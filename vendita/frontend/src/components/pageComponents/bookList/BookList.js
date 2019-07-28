@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 import {
     prevPage,
     nextPage,
-    setPaginator,
     resetPaginator,
     jumpToPage,
 } from '../../../actions/paginator';
 //Components
-import Cart from './Cart';
+import Cart from './cart/Cart';
+import Paginator from './paginator/Paginator';
 //CSS Styles
 import css from './Books.css'
 
@@ -25,7 +25,6 @@ class BookList extends Component {
         prevPage: PropTypes.func.isRequired,
         nextPage: PropTypes.func.isRequired,
         jumpToPage: PropTypes.func.isRequired,
-        setPaginator: PropTypes.func.isRequired,
         resetPaginator: PropTypes.func.isRequired,
     }
 
@@ -46,45 +45,16 @@ class BookList extends Component {
                     ""
                 }
 
-                <section className="paginator">
-                    <button
-                        className={this.props.activePage === 1 ? "disable" : "paginator-scroll"}
-                        onClick={() => this.props.prevPage(this.props.activePage)}>
-                        &#x2039;
-                    </button>
+                <Paginator
+                    activePage={this.props.activePage}
+                    booksCount={this.props.sortedBooks.length}
+                    prevPage={this.props.prevPage}
+                    nextPage={this.props.nextPage}
+                    resetPaginator={this.props.resetPaginator}
+                    jumpToPage={this.props.jumpToPage}
+                    checkSum={this.props.checkSum}
+                />
 
-                    <button
-                        className={this.props.activePage === 1 ? "disable" : ""}
-                        onClick={() => this.props.jumpToPage(this.props.activePage - 1)}>
-                        {this.props.activePage - 1}
-                    </button>
-
-                    <button
-                        className={this.props.sortedBooks.length === 0 ? "disable" : ""}
-                        id="paginator-active">
-                        {this.props.checkSum === this.props.sortedBooks.length ?
-                            this.props.activePage
-                            :
-                            this.props.resetPaginator(this.props.sortedBooks.length)}
-                    </button>
-
-                    <button
-                        className={
-                            this.props.activePage >= this.props.sortedBooks.length / 4 ?
-                                "disable" : ""
-                        }
-                        onClick={() => this.props.jumpToPage(this.props.activePage + 1)}>
-                        {this.props.activePage + 1}
-                    </button>
-
-                    <button
-                        className={this.props.activePage >= this.props.sortedBooks.length / 4 ?
-                            "disable" : "paginator-scroll"
-                        }
-                        onClick={() => this.props.nextPage(this.props.activePage)}>
-                        &#x203a;
-                    </button>
-                </section >
             </section >
         )
     }
@@ -100,7 +70,6 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, {
     prevPage,
     nextPage,
-    setPaginator,
     resetPaginator,
     jumpToPage,
 })(BookList);
