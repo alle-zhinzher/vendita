@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 import booksReducer from './books';
 import sliderReducer from './slider';
 import paginatorReducer from './paginator';
+import authReducer from './auth';
 
 
 
@@ -10,4 +11,5 @@ export default combineReducers({
     booksReducer,
     sliderReducer,
     paginatorReducer,
+    authReducer,
 });

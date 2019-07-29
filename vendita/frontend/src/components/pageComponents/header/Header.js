@@ -17,7 +17,7 @@ class Header extends Component {
     }
     render() {
         return (
-            < header >
+            <header>
                 <div className="logo">
                     <img src="http://127.0.0.1:8000/media/profile_pics/logo.svg" alt="Logo" />
                     <h1>Vendita all`astera</h1>
