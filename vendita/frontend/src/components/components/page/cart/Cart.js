@@ -43,7 +43,7 @@ class Cart extends Component {
                         }
                     </span></h2>
                 </div>
-                <button className="btn-buy cart-buy">
+                <button className="cart-buy-button">
                     <img src="http://127.0.0.1:8000/media/profile_pics/shopping-cart.svg" alt="Logo" />
                 </button>
 

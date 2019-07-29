@@ -29,6 +29,13 @@ button.paginator-active {
 }
 
 
+@media screen and (max-width: 1050px) {
+    
+    .paginator {
+        margin-top: 20px;
+    }
+}
+
 @media screen and (max-width: 800px) {
 
     .paginator {

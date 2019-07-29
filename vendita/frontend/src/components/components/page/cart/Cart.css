@@ -78,21 +78,23 @@
     border: 1px solid rgb(180, 154, 7);
     border-radius: 3px;
 }
-.cart-buy {
+.cart-buy-button {
     font-size: 18px;
     background-color: rgb(160, 160, 160);
-    border-color: rgb(87, 87, 87);
+    border: 1px solid  rgb(87, 87, 87);
+    border-radius: 5px;
     position: absolute;
     bottom: 10px;
     left: 5%;
+    height: 40px;
     width: 90%;
 }
-.cart-buy img {
+.cart-buy-button img {
     height: 20px;
     width: 35px;
 }
 
-.cart-buy:hover {
+.cart-buy-button:hover {
     background-color: rgb(108, 117, 92);
     color: rgb(206, 199, 186);
     
@@ -123,9 +125,6 @@
         padding-top: 70px;
         height: 700px;
     }
-    .paginator {
-        margin-top: 20px;
-    }
 }
 
 @media screen and (max-width: 800px) {
@@ -151,11 +150,5 @@
     .book-cart{
         width: 90%;
         margin-bottom: 15px;
-    }
-    .cart-buy {
-        height: 40px;
-    }
-    .paginator {
-        margin-top: 20px;
     }
 }

@@ -13,7 +13,7 @@ import {
 import Cart from './cart/Cart';
 import Paginator from './paginator/Paginator';
 //CSS Styles
-import css from './Books.css'
+import css from './Page.css'
 
 
 class BookList extends Component {
@@ -37,7 +37,10 @@ class BookList extends Component {
 
             <section className="content-section" >
                 <section className="book-page">
-                    {bookPage}
+                    {this.props.sortedBooks.map((book, index = 1) =>
+                        <Cart key={book.id} book={book} index={index++} active_page={this.props.activePage} />
+                    )
+                    }
                 </section>
 
                 {this.props.sortedBooks.length === 0 ?
