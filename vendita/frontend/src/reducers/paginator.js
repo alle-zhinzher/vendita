@@ -1,7 +1,6 @@
 import {
     GET_NEXT_PAGE,
     GET_PREV_PAGE,
-    SET_PAGINATOR,
     RESET_PAGINATOR,
     JUMP_TO_PAGE,
 } from '../actions/types.js';

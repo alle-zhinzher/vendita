@@ -13,8 +13,8 @@ export const GET_PREV_SLIDE = "GET_PREV_SLIDE";
 
 
 //PAGINATOR TYPES
-export const GET_NEXT_PAGE = "GET_NEXT_SLIDE";
-export const GET_PREV_PAGE = "GET_PREV_SLIDE";
+export const GET_NEXT_PAGE = "GET_NEXT_PAGE";
+export const GET_PREV_PAGE = "GET_PREV_PAGE";
 export const JUMP_TO_PAGE = "JUMP_TO_PAGE";
 export const RESET_PAGINATOR = "RESET_PAGINATOR";
 
