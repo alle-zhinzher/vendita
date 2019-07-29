@@ -1,5 +1,5 @@
 import axios from "axios";
-import { returnErrors } from "./messages";
+import { returnErrors } from "./messages.js";
 
 import {
     USER_LOADED,
@@ -12,8 +12,23 @@ export const loadUser = () => (dispatch, getState) => {
     // User Loading
     dispatch({ type: USER_LOADING });
 
+    // Get token from state
+    const token = getState().authReducer.token;
+
+    // Headers
+    const config = {
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    // If token, add to headers config
+    if (token) {
+        config.headers["Authorization"] = `Token ${token}`;
+    }
+
     axios
-        .get("/api/auth/user", tokenConfig(getState))
+        .get("/api/auth/user", config)
         .then(res => {
             dispatch({
                 type: USER_LOADED,
