@@ -14,6 +14,8 @@ import Slider from './pageComponents/slider/Slider';
 import Footer from './pageComponents/footer/Footer';
 import Login from './accounts/Login';
 import Register from './accounts/Register';
+
+import PrivateRout from './common/PrivateRout'
 // CSS
 import css from './App.css'
 
@@ -28,14 +30,12 @@ class App extends Component {
                         <Aside />
                         <Route path="/vendita" exact component={Slider} />
                         <Route path="/vendita/books" component={Page} />
-                        <Route path="/about" component={Page} />
+                        <PrivateRout path="/about" component={Page} />
+                        <Route path="/vendita/register" component={Register} />
+                        <Route path="/vendita/login" component={Login} />
                         <Footer />
                     </Router>
                 </div>
-                <Router>
-                    <Route path="/vendita/login" component={Login} />
-                    <Route path="/vendita/register" component={Register} />
-                </Router>
             </Provider>
         )
     }
