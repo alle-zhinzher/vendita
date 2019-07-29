@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #My apps
     'API',
+    'accounts',
     'frontend',
     #External apps
     'rest_framework',
