@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 //Redux
 import { Provider } from 'react-redux';
 import store from '../store';
+import { loadUser } from "../actions/auth";
 //Pages
 import Header from './pageComponents/header/Header';
 import Aside from './pageComponents/aside/Aside';
@@ -21,6 +22,9 @@ import css from './App.css'
 
 
 class App extends Component {
+    componentDidMount() {
+        store.dispatch(loadUser());
+    }
     render() {
         return (
             <Provider store={store}>
