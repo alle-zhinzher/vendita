@@ -6,12 +6,15 @@ from .serializers import BookSerializer
 # Lead Viewset
 class BookViewSet(viewsets.ModelViewSet):
     permission_classes = [
-        permissions.IsAuthenticated,
+        permissions.AllowAny,
     ]
     serializer_class = BookSerializer
 
     def get_queryset(self):
-        return self.request.user.books.all()
+        #if self.request.user:
+        #   return self.request.user.books.all()
+        #else:
+        return Book.objects.all()
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
