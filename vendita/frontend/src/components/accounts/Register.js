@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+//Router
+import { Link, Redirect } from "react-router-dom";
+//Redux
+import { connect } from "react-redux";
+import { register } from "../../actions/auth";
 
 import css from './styles.css'
 
@@ -12,17 +17,36 @@ class Register extends Component {
         password2: '',
     }
 
+    static propTypes = {
+        register: PropTypes.func.isRequired,
+        isAuthenticated: PropTypes.bool
+    };
+
     onSubmit = e => {
         e.preventDefault();
-        console.log("submit")
+        const { username, email, password, password2 } = this.state;
+        if (password !== password2) {
+            console.log("Passwords do not match");
+        } else {
+            const newUser = {
+                username,
+                password,
+                email
+            };
+            this.props.register(newUser);
+        }
     };
+
 
     onChange = e => this.setState({ [e.target.name]: e.target.value });
 
     render() {
+        if (this.props.isAuthenticated) {
+            return <Redirect to="/vendita" />;
+        }
         const { username, email, password, password2 } = this.state;
         return (
-            <div className="col-md">
+            <div className="reg-form">
                 <div className="card card-body">
                     <h2 className="text-center">Register</h2>
                     <form onSubmit={this.onSubmit}>
@@ -81,4 +105,7 @@ class Register extends Component {
     }
 }
 
-export default Register;
+const mapStateToProps = state => ({
+    isAuthenticated: state.authReducer.isAuthenticated
+});
+export default connect(mapStateToProps, { register })(Register);

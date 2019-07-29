@@ -14,6 +14,9 @@ import {
 
 // CHECK TOKEN & LOAD USER
 export const loadUser = () => (dispatch, getState) => {
+    // User Loading
+    dispatch({ type: USER_LOADING });
+
     axios
         .get("/api/auth/user", tokenConfig(getState))
         .then(res => {
@@ -58,6 +61,34 @@ export const login = (username, password) => dispatch => {
         });
 };
 
+export const register = ({ username, password, email }) => dispatch => {
+    // Headers
+    const config = {
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    // Request Body
+    const body = JSON.stringify({ username, email, password });
+
+    axios
+        .post("/api/auth/register", body, config)
+        .then(res => {
+            dispatch({
+                type: REGISTER_SUCCESS,
+                payload: res.data
+            });
+        })
+        .catch(err => {
+            dispatch(returnErrors(err.response.data, err.response.status));
+            dispatch({
+                type: REGISTER_FAIL
+            });
+        });
+};
+
+
 
 // CHECK TOKEN & LOAD USER
 export const logout = () => (dispatch, getState) => {
@@ -79,7 +110,7 @@ export const logout = () => (dispatch, getState) => {
 // Setup config with token - helper function
 export const tokenConfig = getState => {
     // Get token from state
-    const token = getState().auth.token;
+    const token = getState().authReducer.token;
 
     // Headers
     const config = {

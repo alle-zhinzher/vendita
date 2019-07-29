@@ -65,7 +65,7 @@ class Login extends Component {
                             </button>
                         </div>
                         <p>
-                            Don`t have an account? <Link to="/vendita/regiser">register</Link>
+                            Don`t have an account? <Link to="/vendita/register">register</Link>
                         </p>
                     </form>
                 </div>
