@@ -76,3 +76,34 @@ export const login = (username, password) => dispatch => {
             });
         });
 };
+
+
+// CHECK TOKEN & LOAD USER
+export const logout = () => (dispatch, getState) => {
+
+    // Get token from state
+    const token = getState().authReducer.token;
+
+    // Headers
+    const config = {
+        headers: {
+            "Content-Type": "application/json"
+        }
+    };
+
+    // If token, add to headers config
+    if (token) {
+        config.headers["Authorization"] = `Token ${token}`;
+    }
+
+    axios
+        .post("/api/auth/logout/", null, config)
+        .then(res => {
+            dispatch({
+                type: LOGOUT_SUCCESS,
+            });
+        })
+        .catch(err => {
+            dispatch(returnErrors(err.response.data, err.response.status));
+        });
+};

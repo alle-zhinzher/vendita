@@ -6,16 +6,21 @@ import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 //Reducers
 import { getBooksByGenre, getAllBooks } from '../../../actions/books';
+import { logout } from "../../../actions/auth";
 //CSS Styles
 import css from './Header.css'
 
 
 class Header extends Component {
     static propTypes = {
+        auth: PropTypes.object.isRequired,
+
+        logout: PropTypes.func.isRequired,
         getAllBooks: PropTypes.func.isRequired,
         getBooksByGenre: PropTypes.func.isRequired,
     }
     render() {
+        const { isAuthenticated, user } = this.props.auth;
         return (
             <header>
                 <div className="logo">
@@ -60,14 +65,22 @@ class Header extends Component {
                             </ul>
                         </li>
                         <li><Link className="link" to="/about">about</Link></li>
-                        <li><Link className="link" to="/vendita/login">login</Link></li>
-
+                        {isAuthenticated ?
+                            <li><Link
+                                onClick={this.props.logout}
+                                className="link" to="/vendita/">logout</Link></li>
+                            :
+                            <li><Link className="link" to="/vendita/login">login</Link></li>
+                        }
                     </ul>
                 </nav>
             </header >
         )
     }
 }
+const mapStateToProps = state => ({
+    auth: state.authReducer
+});
 
-export default connect(null, { getAllBooks, getBooksByGenre })(Header);
+export default connect(mapStateToProps, { getAllBooks, getBooksByGenre, logout })(Header);
 
