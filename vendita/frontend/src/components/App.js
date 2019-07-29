@@ -1,11 +1,11 @@
 //React
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+//React Router
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //Redux
 import { Provider } from 'react-redux';
 import store from '../store';
-//React Router
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 //Pages
 import Header from './components/header/Header';
 import Aside from './components/aside/Aside';
