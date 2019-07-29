@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from PIL import Image
 
 
@@ -12,6 +13,7 @@ class Book(models.Model):
     cost = models.IntegerField(default=0)
     is_hot_price = models.BooleanField(default=False)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    owner = models.ForeignKey(User, related_name='books', on_delete=models.CASCADE, null=True)
 
     def save(self, *args, **kwargs):
         super().save()
