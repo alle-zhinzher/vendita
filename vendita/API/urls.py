@@ -3,6 +3,6 @@ from .api import BookViewSet
 
 router = routers.DefaultRouter()
 
-router.register('/books', BookViewSet, 'Books')
+router.register('api/books', BookViewSet, 'Books')
 
 urlpatterns = router.urls
