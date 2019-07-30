@@ -1,11 +1,38 @@
-import React from 'react'
+import React, { Component } from 'react';
+import PropTypes from "prop-types";
+//Router
+import { Redirect } from "react-router-dom";
+//Redux
+import { getUserBooks } from "../../actions/user";
+import { connect } from "react-redux";
+//Components
+import SmallCart from './smallCart/SmallCart';
 
-function UserBooks() {
-    return (
-        <section className="content-section" >
-            <h1>User  Books</h1>
-        </section>
-    )
+class UserBooks extends Component {
+    static propTypes = {
+        userBooks: PropTypes.array.isRequired,
+        getUserBooks: PropTypes.func.isRequired,
+    };
+    componentWillMount() {
+        this.props.getUserBooks();
+    }
+    render() {
+        const bookPage = this.props.userBooks.map(book =>
+            <SmallCart key={book.id} book={book} />
+        );
+
+        return (
+            <section className="content-section" >
+                <div className="my-books-wrapp">
+                    {bookPage}
+                </div>
+            </section>
+        )
+    }
 }
 
-export default UserBooks;
+const mapStateToProps = state => ({
+    userBooks: state.userReducer.userBooks,
+});
+
+export default connect(mapStateToProps, { getUserBooks })(UserBooks);

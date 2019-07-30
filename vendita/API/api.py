@@ -11,10 +11,10 @@ class BookViewSet(viewsets.ModelViewSet):
     serializer_class = BookSerializer
 
     def get_queryset(self):
-        #if self.request.user:
-        #   return self.request.user.books.all()
-        #else:
-        return Book.objects.all()
+        if self.request.user.is_authenticated:
+            return self.request.user.books.all()
+        else:
+            return Book.objects.all()
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

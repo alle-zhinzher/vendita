@@ -1,0 +1,85 @@
+.my-books-wrapp {
+    width: 500px;
+    margin: 50px auto;
+    text-align: left;
+
+}
+.small-cart {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    color: black;
+}
+
+.cart-image > img {
+    width: 80px;
+    height: 105px;
+    border-radius: 5px;
+}
+
+.cart-property {
+    width: 130px;
+    margin-left: 20px;
+}
+.cart-property>h4 {
+    font-size: 16px;
+}
+.cart-property>h5 {
+    font-size: 14px;
+
+}
+
+.grey {
+    color: rgb(88, 87, 87);
+}
+
+.max-price {
+    font-size: 16px;
+}
+.max-price>span {
+    color: green;
+}
+
+.cart-button {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+}
+
+.small-btn {
+    width: 100px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-view {
+    border-color: rgb(107, 150, 150);
+    background-color: rgb(181, 181, 231);
+}
+.btn-view:hover {
+    background-color: rgb(131, 131, 165);
+    color: rgb(224, 209, 182);
+}
+.btn-apply {
+    border-color: rgb(66, 90, 63);
+    background-color: rgb(118, 161, 124);
+}
+.btn-apply:hover {
+    background-color: rgb(54, 82, 43);
+    color: rgb(224, 209, 182);
+}
+.btn-delete {
+    border-color: rgb(124, 45, 45);
+    background-color: rgb(197, 122, 100);
+}
+.btn-delete:hover {
+    background-color: rgb(160, 56, 56);
+    color: rgb(224, 209, 182);
+}
