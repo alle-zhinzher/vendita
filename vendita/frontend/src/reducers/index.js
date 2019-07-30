@@ -4,6 +4,8 @@ import booksReducer from './books';
 import sliderReducer from './slider';
 import paginatorReducer from './paginator';
 import authReducer from './auth';
+import userReducer from './user';
+
 
 
 
@@ -12,4 +14,5 @@ export default combineReducers({
     sliderReducer,
     paginatorReducer,
     authReducer,
+    userReducer,
 });
