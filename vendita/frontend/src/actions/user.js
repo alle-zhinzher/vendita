@@ -4,13 +4,13 @@ import {
     CREATE_NEW_BOOK,
     BOOK_CREATION_FAIL,
     GET_USER_BOOKS,
+    DELETE_BOOK,
 } from "./types";
 
 
 
 
 // GET USER BOOKS
-
 export const getUserBooks = () => (dispatch, getState) => {
     axios
         .get("/api/books/", tokenConfig(getState))
@@ -49,4 +49,17 @@ export const createBook = book => (dispatch, getState) => {
                 }
             });
         });
+};
+
+//DELETE USER BOOOK
+export const deleteBook = id => (dispatch, getState) => {
+    axios
+        .delete(`/api/books/${id}/`, tokenConfig(getState))
+        .then(res => {
+            dispatch({
+                type: DELETE_BOOK,
+                payload: id
+            });
+        })
+        .catch(err => console.log(err));
 };

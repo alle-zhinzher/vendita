@@ -19,7 +19,9 @@ class SmallCart extends Component {
                 <div className="cart-button">
                     <button className="small-btn btn-view">View</button>
                     <button className="small-btn btn-apply">Apply</button>
-                    <button className="small-btn btn-delete">Delete</button>
+                    <button
+                        onClick={() => this.props.delete(this.props.book.id)}
+                        className="small-btn btn-delete">Delete</button>
                 </div>
             </section>
         )

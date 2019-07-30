@@ -2,6 +2,7 @@ import {
     CREATE_NEW_BOOK,
     BOOK_CREATION_FAIL,
     GET_USER_BOOKS,
+    DELETE_BOOK,
 } from '../actions/types.js';
 
 const initialState = {
@@ -18,6 +19,11 @@ export default function (state = initialState, action) {
                 ...state,
                 bookPosted: true,
             }
+        case DELETE_BOOK:
+            return {
+                ...state,
+                userBooks: state.userBooks.filter(book => book.id !== action.payload)
+            };
         case GET_USER_BOOKS:
             return {
                 ...state,

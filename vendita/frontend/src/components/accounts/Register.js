@@ -6,7 +6,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { register } from "../../actions/auth";
 //CSS Styles
-import css from './styles.css';
+import css from './Accounts.css';
 
 
 class Register extends Component {

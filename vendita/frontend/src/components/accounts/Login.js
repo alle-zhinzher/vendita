@@ -6,7 +6,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../../actions/auth";
 // CSS
-import css from './styles.css'
+import css from './Accounts.css'
 
 
 
