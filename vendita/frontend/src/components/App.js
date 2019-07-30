@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 //React Router
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import PrivateRout from './common/PrivateRout'
 //Redux
 import { Provider } from 'react-redux';
 import store from '../store';
@@ -15,11 +16,8 @@ import Slider from './pageComponents/slider/Slider';
 import Footer from './pageComponents/footer/Footer';
 import Login from './accounts/Login';
 import Register from './accounts/Register';
-
-import PrivateRout from './common/PrivateRout'
 // CSS
 import css from './App.css'
-
 
 class App extends Component {
     componentDidMount() {
@@ -40,7 +38,7 @@ class App extends Component {
                         <Footer />
                     </Router>
                 </div>
-            </Provider>
+            </Provider >
         )
     }
 }

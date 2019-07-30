@@ -50,13 +50,20 @@ export const login = (username, password) => dispatch => {
         .then(res => {
             dispatch({
                 type: LOGIN_SUCCESS,
-                payload: res.data
+                payload: {
+                    ...res.data,
+                    'msg': {},
+                    'status': null,
+                }
             });
         })
         .catch(err => {
-            dispatch(returnErrors(err.response.data, err.response.status));
             dispatch({
-                type: LOGIN_FAIL
+                type: LOGIN_FAIL,
+                payload: {
+                    'errorMsg': err.response.data,
+                    'errorStatus': err.response.status,
+                }
             });
         });
 };
@@ -77,13 +84,20 @@ export const register = ({ username, password, email }) => dispatch => {
         .then(res => {
             dispatch({
                 type: REGISTER_SUCCESS,
-                payload: res.data
+                payload: {
+                    ...res.data,
+                    'msg': {},
+                    'status': null,
+                }
             });
         })
         .catch(err => {
-            dispatch(returnErrors(err.response.data, err.response.status));
             dispatch({
-                type: REGISTER_FAIL
+                type: REGISTER_FAIL,
+                payload: {
+                    'errorMsg': err.response.data,
+                    'errorStatus': err.response.status,
+                }
             });
         });
 };

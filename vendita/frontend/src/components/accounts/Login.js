@@ -18,7 +18,8 @@ class Login extends Component {
 
     static propTypes = {
         login: PropTypes.func.isRequired,
-        isAuthenticated: PropTypes.bool
+        isAuthenticated: PropTypes.bool,
+        errorMsg: PropTypes.object,
     };
 
     onSubmit = e => {
@@ -34,12 +35,14 @@ class Login extends Component {
         }
         const { username, password } = this.state;
         return (
-            <div className="reg-form">
-                <div className="card card-body">
-                    <h2 className="text-center">Login</h2>
+            <div className="form-page">
+                <div className="form-body">
+                    <h2>Login</h2>
+                    <h4>{this.props.errorMsg.non_field_errors ?
+                        this.props.errorMsg.non_field_errors : ""}</h4>
                     <form onSubmit={this.onSubmit}>
                         <div className="form-group">
-                            <label>Username</label>
+                            <label>Username</label><br />
                             <input
                                 type="text"
                                 className="form-control"
@@ -49,7 +52,7 @@ class Login extends Component {
                             />
                         </div>
                         <div className="form-group">
-                            <label>Password</label>
+                            <label>Password</label><br />
                             <input
                                 type="password"
                                 className="form-control"
@@ -65,7 +68,7 @@ class Login extends Component {
                             </button>
                         </div>
                         <p>
-                            Don`t have an account? <Link to="/vendita/register">register</Link>
+                            Don`t have an account? <Link to="/vendita/register">Register</Link>
                         </p>
                     </form>
                 </div>
@@ -75,6 +78,7 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => ({
-    isAuthenticated: state.authReducer.isAuthenticated
+    isAuthenticated: state.authReducer.isAuthenticated,
+    errorMsg: state.authReducer.errorMsg,
 });
 export default connect(mapStateToProps, { login })(Login);
