@@ -65,10 +65,45 @@ class Header extends Component {
                             </ul>
                         </li>
                         <li><Link className="link" to="/about">about</Link></li>
+
                         {isAuthenticated ?
-                            <li><Link
-                                onClick={this.props.logout}
-                                className="link" to="/vendita/">logout</Link></li>
+                            <li>
+                                <input
+                                    type="checkbox"
+                                    name="toggle"
+                                    className="toggleSubmenu"
+                                    id="sub_m2" />
+                                <span className="link" id="sub_m2">account
+                                <span className="row">&#x203a;</span></span>
+                                <label htmlFor="sub_m2" className="toggleSubmenu"></label>
+                                <ul>
+                                    <li>
+                                        <Link
+                                            className="link"
+                                            to="/vendita/user/book/new">new lot
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            className="link"
+                                            to="/vendita/user/books">my lots
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            className="link"
+                                            to="/vendita/user/book/basket">basket
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            onClick={this.props.logout}
+                                            className="link"
+                                            to="/vendita">logout
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </li>
                             :
                             <li><Link className="link" to="/vendita/login">login</Link></li>
                         }

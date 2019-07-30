@@ -16,6 +16,9 @@ import Slider from './pageComponents/slider/Slider';
 import Footer from './pageComponents/footer/Footer';
 import Login from './accounts/Login';
 import Register from './accounts/Register';
+import NewBook from './user/NewBook';
+import UserBooks from './user/UserBooks';
+import UserBasket from './user/UserBasket';
 // CSS
 import css from './App.css'
 
@@ -35,6 +38,9 @@ class App extends Component {
                         <PrivateRout path="/about" component={Page} />
                         <Route path="/vendita/register" component={Register} />
                         <Route path="/vendita/login" component={Login} />
+                        <Route path="/vendita/user/book/new" component={NewBook} />
+                        <Route path="/vendita/user/books" component={UserBooks} />
+                        <Route path="/vendita/user/book/basket" component={UserBasket} />
                         <Footer />
                     </Router>
                 </div>

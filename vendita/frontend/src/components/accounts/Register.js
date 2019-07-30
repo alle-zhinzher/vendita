@@ -5,8 +5,6 @@ import { Link, Redirect } from "react-router-dom";
 //Redux
 import { connect } from "react-redux";
 import { register } from "../../actions/auth";
-//Component
-import RegisterAlerts from './RegisterAlerts';
 //CSS Styles
 import css from './styles.css';
 
