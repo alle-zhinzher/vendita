@@ -4,6 +4,7 @@ import {
 } from '../actions/types.js';
 
 const initialState = {
+    bookPosted: false,
     errorMsg: {},
     errorStatus: null,
 }
@@ -13,7 +14,7 @@ export default function (state = initialState, action) {
         case CREATE_NEW_BOOK:
             return {
                 ...state,
-                activePage: action.payload
+                bookPosted: true,
             }
         case BOOK_CREATION_FAIL:
             return {

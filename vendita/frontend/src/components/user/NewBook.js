@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 class NewBook extends Component {
 
     static propTypes = {
+        bookPosted: PropTypes.bool.isRequired,
         createBook: PropTypes.func.isRequired,
     };
 
@@ -65,7 +66,11 @@ class NewBook extends Component {
             pages,
             created_at,
             cost,
-            image } = this.state;
+        } = this.state;
+
+        if (this.props.bookPosted) {
+            return <Redirect to="/vendita" />;
+        }
 
         return (
             <div className="form-page">
@@ -174,4 +179,9 @@ class NewBook extends Component {
     }
 }
 
-export default connect(null, { createBook })(NewBook);
+
+const mapStateToProps = state => ({
+    bookPosted: state.userReducer.bookPosted,
+});
+
+export default connect(mapStateToProps, { createBook })(NewBook);
