@@ -5,6 +5,7 @@ export const GET_BOOKS_BY_GENRES = "GET_BOOKS_BY_GENRES";
 export const SORT_BOOKS_BY_PRICE = "SORT_BOOKS_BY_PRICE";
 export const SORT_BOOKS_BY_PAGES = "SORT_BOOKS_BY_PAGES";
 export const SEARCH_BOOKS = "SEARCH_BOOKS";
+export const GET_BOOK_BY_ID = "GET_BOOK_BY_ID";
 
 
 //SLIDER TYPES
@@ -35,5 +36,6 @@ export const CREATE_NEW_BOOK = "CREATE_NEW_BOOK";
 export const GET_USER_BOOKS = "GET_USER_BOOKS";
 export const DELETE_BOOK = "DELETE_BOOK";
 export const BOOK_CREATION_FAIL = "BOOK_CREATION_FAIL";
+export const NEW_CUSTOMER = "NEW_CUSTOMER";
 
 

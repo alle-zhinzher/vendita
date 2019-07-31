@@ -14,6 +14,10 @@ class Book(models.Model):
     is_hot_price = models.BooleanField(default=False)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     owner = models.ForeignKey(User, related_name='books', on_delete=models.CASCADE, null=True)
+    customer = models.ForeignKey(User,
+                                 related_name='books_customer',
+                                 on_delete=models.CASCADE,
+                                 null=True)
 
     def save(self, *args, **kwargs):
         super().save()

@@ -2,6 +2,7 @@ import axios from 'axios';
 
 import {
     GET_BOOKS,
+    GET_BOOK_BY_ID,
     GET_HOOT_BOOKS,
     GET_BOOKS_BY_GENRES,
     GET_ALL_BOOKS,
@@ -18,6 +19,19 @@ export const getBooks = () => dispatch => {
             dispatch({
                 type: GET_BOOKS,
                 payload: res.data
+            });
+        })
+        .catch(err => console.log(err));
+}
+
+// GET BOOK BY ID
+export const getBooksByID = (id) => dispatch => {
+    console.log(id);
+    axios.get("/api/books/")
+        .then(res => {
+            dispatch({
+                type: GET_BOOK_BY_ID,
+                payload: res.data.filter(book => book.id == id)
             });
         })
         .catch(err => console.log(err));

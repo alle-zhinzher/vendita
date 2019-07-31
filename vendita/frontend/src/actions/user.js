@@ -5,6 +5,7 @@ import {
     BOOK_CREATION_FAIL,
     GET_USER_BOOKS,
     DELETE_BOOK,
+    NEW_CUSTOMER,
 } from "./types";
 
 
@@ -62,4 +63,32 @@ export const deleteBook = id => (dispatch, getState) => {
             });
         })
         .catch(err => console.log(err));
+};
+
+//NEW CUSTOMER
+export const newCustomer = (id, customerID, date) => (dispatch, getState) => {
+    console.log(customerID);
+    const data = {
+        "cost": 788,
+        "created_at": date,
+        "customer": customerID,
+    };
+    axios
+
+        .put(`/api/books/${id}/`, data)
+        .then(res => {
+            dispatch({
+                type: NEW_CUSTOMER,
+                payload: id
+            });
+        })
+        .catch(err => {
+            dispatch({
+                type: BOOK_CREATION_FAIL,
+                payload: {
+                    'errorMsg': err.response.data,
+                    'errorStatus': err.response.status,
+                }
+            });
+        });
 };

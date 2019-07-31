@@ -3,6 +3,7 @@ import {
     BOOK_CREATION_FAIL,
     GET_USER_BOOKS,
     DELETE_BOOK,
+    NEW_CUSTOMER,
 } from '../actions/types.js';
 
 const initialState = {
@@ -19,6 +20,10 @@ export default function (state = initialState, action) {
                 ...state,
                 bookPosted: true,
             }
+        case NEW_CUSTOMER:
+            return {
+                ...state,
+            };
         case DELETE_BOOK:
             return {
                 ...state,

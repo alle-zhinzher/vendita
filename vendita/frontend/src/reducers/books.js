@@ -1,6 +1,7 @@
 import {
     GET_BOOKS,
     GET_HOOT_BOOKS,
+    GET_BOOK_BY_ID,
     GET_BOOKS_BY_GENRES,
     GET_ALL_BOOKS,
     SORT_BOOKS_BY_PRICE,
@@ -11,7 +12,8 @@ import {
 const initialState = {
     books: [],
     hootBooks: [],
-    sortedBooks: []
+    sortedBooks: [],
+    currentBook: [],
 }
 
 export default function (state = initialState, action) {
@@ -21,31 +23,20 @@ export default function (state = initialState, action) {
                 ...state,
                 books: action.payload
             }
+        case GET_BOOK_BY_ID:
+            return {
+                ...state,
+                currentBook: action.payload
+            }
         case GET_HOOT_BOOKS:
             return {
                 ...state,
                 hootBooks: action.payload
             }
         case GET_ALL_BOOKS:
-            return {
-                ...state,
-                sortedBooks: action.payload
-            }
         case GET_BOOKS_BY_GENRES:
-            return {
-                ...state,
-                sortedBooks: action.payload
-            }
         case SORT_BOOKS_BY_PRICE:
-            return {
-                ...state,
-                sortedBooks: action.payload
-            }
         case SORT_BOOKS_BY_PAGES:
-            return {
-                ...state,
-                sortedBooks: action.payload
-            }
         case SEARCH_BOOKS:
             return {
                 ...state,

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+//Router
+import { Link } from "react-router-dom";
 //CSS STYLES
 import css from './SmallCart.css'
 
@@ -17,13 +19,21 @@ class SmallCart extends Component {
                     <h5 className="max-price">Price: <span>{this.props.book.cost}</span></h5>
                 </div>
                 <div className="cart-button">
-                    <button className="small-btn btn-view">View</button>
-                    <button className="small-btn btn-apply">Apply</button>
+                    <Link
+                        to={`/vendita/book/${this.props.book.id}`}
+                        className="small-btn btn-view">View
+                    </Link>
+                    <button
+                        onClick={() => this.props.apply(this.props.book.id,
+                            6,
+                            this.props.book.created_at
+                        )}
+                        className="small-btn btn-apply">Apply</button>
                     <button
                         onClick={() => this.props.delete(this.props.book.id)}
                         className="small-btn btn-delete">Delete</button>
                 </div>
-            </section>
+            </section >
         )
     }
 }
