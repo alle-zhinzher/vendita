@@ -80,6 +80,7 @@
 }
 
 .page-price{
+    position: relative;
     font-weight: bold;
     color: rgb(7, 7, 7);
 }
@@ -120,4 +121,45 @@
     background-color: rgb(104, 167, 95);
 }
 
+.page-sale {
+    background-color: rgb(121, 36, 36);
+    color: rgb(134, 134, 47);
+    border-radius: 3px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 580px) {
+    .page-book-discripion{
+        width: 90%;
+    }
+    .page-wrapp {
+        margin-top: 10px;
+        width: 92%;
+    }
+
+}
+
+@media screen and (max-width: 440px) {
+    .cart-price {
+        margin: 5px auto;
+        width: 260px;
+    }
+
+    .page-book-prices {
+        flex-direction: column;
+    }
+    .page-book-image > img {
+        height: 200px;
+        width: 160px;
+    }
+    .buy-submit {
+        margin-left: 9px;
+        width: 130px;
+    }
+    #user-price {
+        width: 130px;
+    }
+
+}
 

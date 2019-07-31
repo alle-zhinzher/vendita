@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 //Router
 import { Redirect } from "react-router-dom";
 //Redux
-import { getBooksByID } from "../../../actions/books";
+//Redux
 import { connect } from "react-redux";
+import { newCustomer } from "../../actions/user";
+import { getBooksByID } from "../../../actions/books";
 //Components
 import BookCart from './bookCart/BookCart'
 class BookView extends Component {
@@ -23,7 +25,12 @@ class BookView extends Component {
         return (
             <section className="content-section" >
                 {this.props.currentBook.map(book =>
-                    <BookCart key={book.id} book={book} />
+                    <BookCart
+                        key={book.id}
+                        book={book}
+                        newCustomer={this.props.newCustomer}
+                        user={this.props.user}
+                    />
                 )}
             </section>
         )
@@ -35,4 +42,4 @@ const mapStateToProps = state => ({
     user: state.authReducer.user,
 });
 
-export default connect(mapStateToProps, { getBooksByID })(BookView);
+export default connect(mapStateToProps, { getBooksByID, newCustomer })(BookView);

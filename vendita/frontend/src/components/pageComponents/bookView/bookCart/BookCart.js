@@ -43,12 +43,31 @@ class BookCart extends Component {
 
                 {this.props.book.is_hot_price ?
                     <div className="page-book-prices">
-                        <span className="page-current-price">
-                            Current Price: 0$
+                        <div className="buy-book-form">
+                            <form>
+                                <button type="submit" className="buy-submit">
+                                    <img src="http://127.0.0.1:8000/media/profile_pics/shopping-cart.svg" alt="Logo" />
+                                </button>
+                                <input
+                                    type="number"
+                                    id="user-price"
+                                    className="page-form-input"
+                                    name="current_price"
+                                />
+                            </form>
+                        </div >
+                        <span className="cart-price page-current-price">
+                            Current Price:<br />
+                            <span className="page-price">
+                                0$
+                            </span>
                         </span>
-                        <span className="page-owner-price">
-                            Owner Price: {this.props.book.cost * 0.75}$
+                        <span className="cart-price cart-owner-price">
+                            Owner price:<br />
+                            <span className="page-price">
+                                {this.props.book.cost * 0.75}$
                             <span className="page-sale">25%</span>
+                            </span>
                         </span>
                     </div>
                     :
@@ -78,6 +97,7 @@ class BookCart extends Component {
                                 {this.props.book.cost}$
                             </span>
                         </span>
+
                     </div>
                 }
 
