@@ -1,9 +1,29 @@
 import React, { Component } from 'react';
+//Router
+import { Redirect } from "react-router-dom";
+//CSS Styles
 import css from './BookCart.css';
 
 
 class BookCart extends Component {
+    state = {
+        customer_price: '',
+    }
+    onSubmit = e => {
+        e.preventDefault();
+        this.props.newCustomer(
+            this.props.book.id,
+            this.props.user.id,
+            this.props.book.created_at,
+            this.state.customer_price
+        );
+    };
+
+    onChange = e => this.setState({ customer_price: e.target.value });
     render() {
+        if (this.props.customerLoading) {
+            return <Redirect to="/vendita/user/books" />;
+        }
         return (
             <section className='page-wrapp'>
                 <div className="page-book-image">
@@ -41,65 +61,55 @@ class BookCart extends Component {
                     </p>
                 </div>
 
-                {this.props.book.is_hot_price ?
-                    <div className="page-book-prices">
-                        <div className="buy-book-form">
-                            <form>
-                                <button type="submit" className="buy-submit">
-                                    <img src="http://127.0.0.1:8000/media/profile_pics/shopping-cart.svg" alt="Logo" />
-                                </button>
-                                <input
-                                    type="number"
-                                    id="user-price"
-                                    className="page-form-input"
-                                    name="current_price"
-                                />
-                            </form>
-                        </div >
-                        <span className="cart-price page-current-price">
-                            Current Price:<br />
-                            <span className="page-price">
-                                0$
-                            </span>
-                        </span>
-                        <span className="cart-price cart-owner-price">
-                            Owner price:<br />
-                            <span className="page-price">
-                                {this.props.book.cost * 0.75}$
-                            <span className="page-sale">25%</span>
-                            </span>
-                        </span>
-                    </div>
-                    :
-                    <div className="page-book-prices">
-                        <div className="buy-book-form">
-                            <form>
-                                <button type="submit" className="buy-submit">
-                                    <img src="http://127.0.0.1:8000/media/profile_pics/shopping-cart.svg" alt="Logo" />
-                                </button>
-                                <input
-                                    type="number"
-                                    id="user-price"
-                                    className="page-form-input"
-                                    name="current_price"
-                                />
-                            </form>
-                        </div >
-                        <span className="cart-price page-current-price">
-                            Current Price:<br />
-                            <span className="page-price">
-                                0$
-                            </span>
-                        </span>
-                        <span className="cart-price cart-owner-price">
-                            Owner price:<br />
-                            <span className="page-price">
-                                {this.props.book.cost}$
-                            </span>
-                        </span>
 
-                    </div>
-                }
+                <div className="page-book-prices">
+                    <div className="buy-book-form">
+                        {
+                            this.props.book.owner !== this.props.user.id ?
+                                <form onSubmit={this.onSubmit}>
+                                    <button type="submit" className="buy-submit">
+                                        <img src="http://127.0.0.1:8000/media/profile_pics/shopping-cart.svg" alt="Logo" />
+                                    </button>
+                                    <input
+                                        type="number"
+                                        id="user-price"
+                                        className="page-form-input"
+                                        onChange={this.onChange}
+                                        name="current_price"
+                                    />
+                                </form>
+                                :
+                                ""
+                        }
+                    </div >
+                    <span className="cart-price page-current-price">
+                        Current Price:<br />
+                        <span className="page-price">
+                            0$
+                            </span>
+                    </span>
+                    <span className="cart-price cart-owner-price">
+                        Owner price:<br />
+                        <span className="page-price">
+                            {this.props.book.is_hot_price ?
+                                <span>
+                                    <span className="page-price">
+                                        {this.props.book.cost * 0.75}$
+                                    </span>
+                                    <span className="page-sale">25%</span>
+                                </span>
+                                :
+                                <span>
+                                    <span className="page-price">
+                                        {this.props.book.cost}$
+                                    </span>
+                                </span>
+                            }
+                        </span>
+                    </span>
+                </div>
+
+
 
             </section>
         )

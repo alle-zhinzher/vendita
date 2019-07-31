@@ -66,20 +66,18 @@ export const deleteBook = id => (dispatch, getState) => {
 };
 
 //NEW CUSTOMER
-export const newCustomer = (id, customerID, date) => (dispatch, getState) => {
-    console.log(customerID);
+export const newCustomer = (id, customerID, date, customer_price) => (dispatch, getState) => {
     const data = {
-        "cost": 788,
         "created_at": date,
         "customer": customerID,
+        "customer_price": customer_price
     };
     axios
-
         .put(`/api/books/${id}/`, data)
         .then(res => {
             dispatch({
                 type: NEW_CUSTOMER,
-                payload: id
+                payload: true
             });
         })
         .catch(err => {
@@ -92,3 +90,4 @@ export const newCustomer = (id, customerID, date) => (dispatch, getState) => {
             });
         });
 };
+

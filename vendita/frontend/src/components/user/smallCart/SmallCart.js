@@ -24,9 +24,11 @@ class SmallCart extends Component {
                         className="small-btn btn-view">View
                     </Link>
                     <button
-                        onClick={() => this.props.apply(this.props.book.id,
-                            6,
-                            this.props.book.created_at
+                        onClick={() => this.props.apply(
+                            this.props.book.id,
+                            4,
+                            this.props.book.created_at,
+                            400
                         )}
                         className="small-btn btn-apply">Apply</button>
                     <button

@@ -1,27 +1,30 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types";
-//Router
-import { Redirect } from "react-router-dom";
-//Redux
 //Redux
 import { connect } from "react-redux";
-import { newCustomer } from "../../actions/user";
+import { newCustomer } from "../../../actions/user";
 import { getBooksByID } from "../../../actions/books";
+import { loadUser } from "../../../actions/auth";
 //Components
 import BookCart from './bookCart/BookCart'
 class BookView extends Component {
     static propTypes = {
         currentBook: PropTypes.array.isRequired,
-        user: PropTypes.object.isRequired,
+        user: PropTypes.object,
+        customerLoading: PropTypes.bool.isRequired,
+
         getBooksByID: PropTypes.func.isRequired,
+        loadUser: PropTypes.func.isRequired,
     };
 
     componentDidMount() {
         const { match: { params } } = this.props;
-        this.props.getBooksByID(params.bookID)
+        this.props.loadUser();
+        this.props.getBooksByID(params.bookID);
     }
 
     render() {
+
         return (
             <section className="content-section" >
                 {this.props.currentBook.map(book =>
@@ -30,8 +33,10 @@ class BookView extends Component {
                         book={book}
                         newCustomer={this.props.newCustomer}
                         user={this.props.user}
+                        customerLoading={this.props.customerLoading}
                     />
                 )}
+                <h3>Item Not Found 404</h3>
             </section>
         )
     }
@@ -40,6 +45,11 @@ class BookView extends Component {
 const mapStateToProps = state => ({
     currentBook: state.booksReducer.currentBook,
     user: state.authReducer.user,
+    customerLoading: state.userReducer.customerLoading,
 });
 
-export default connect(mapStateToProps, { getBooksByID, newCustomer })(BookView);
+export default connect(mapStateToProps, {
+    getBooksByID,
+    newCustomer,
+    loadUser,
+})(BookView);

@@ -7,6 +7,7 @@ import {
 } from '../actions/types.js';
 
 const initialState = {
+    customerLoading: false,
     userBooks: [],
     bookPosted: false,
     errorMsg: {},
@@ -23,6 +24,7 @@ export default function (state = initialState, action) {
         case NEW_CUSTOMER:
             return {
                 ...state,
+                customerLoading: action.payload,
             };
         case DELETE_BOOK:
             return {
@@ -33,6 +35,7 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 userBooks: action.payload,
+                customerLoading: false,
             }
         case BOOK_CREATION_FAIL:
             return {

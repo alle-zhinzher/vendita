@@ -11,11 +11,12 @@ import SmallCart from './smallCart/SmallCart';
 class UserBooks extends Component {
     static propTypes = {
         userBooks: PropTypes.array.isRequired,
-        user: PropTypes.object.isRequired,
+        user: PropTypes.object,
 
         getUserBooks: PropTypes.func.isRequired,
         deleteBook: PropTypes.func.isRequired,
         newCustomer: PropTypes.func.isRequired,
+        basketLoad: PropTypes.func.isRequired
     };
     componentWillMount() {
         this.props.getUserBooks();
@@ -45,4 +46,8 @@ const mapStateToProps = state => ({
     user: state.authReducer.user,
 });
 
-export default connect(mapStateToProps, { getUserBooks, deleteBook, newCustomer })(UserBooks);
+export default connect(mapStateToProps, {
+    getUserBooks,
+    deleteBook,
+    newCustomer,
+})(UserBooks);

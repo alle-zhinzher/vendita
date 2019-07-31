@@ -66,6 +66,7 @@
 .page-book-prices {
     display: flex;
     justify-content: center;
+    margin-top: 40px;
 }
 
 .cart-price {
@@ -80,7 +81,6 @@
 }
 
 .page-price{
-    position: relative;
     font-weight: bold;
     color: rgb(7, 7, 7);
 }
@@ -136,6 +136,9 @@
     .page-wrapp {
         margin-top: 10px;
         width: 92%;
+    }
+    .page-book-prices {
+        margin-top: 0px;
     }
 
 }

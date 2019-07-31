@@ -11,6 +11,8 @@ class Book(models.Model):
     pages = models.IntegerField(default=0)
     created_at = models.DateField()
     cost = models.IntegerField(default=0)
+    customer_price = models.IntegerField(default=0)
+    is_sold_out = models.BooleanField(default=False)
     is_hot_price = models.BooleanField(default=False)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     owner = models.ForeignKey(User, related_name='books', on_delete=models.CASCADE, null=True)
