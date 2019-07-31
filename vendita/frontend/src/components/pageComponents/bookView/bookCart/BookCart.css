@@ -42,7 +42,7 @@
 .page-book-props {
     margin-top: 5px;
     position: relative;
-    height: 50px;
+    height: 25px;
 }
 
 .page-book-date{
@@ -51,9 +51,73 @@
     top: 5px;
 }
 
+.page-black {
+    color: rgb(10, 10, 10);
+    font-weight: bold;
+    margin-left: 5px;
+}
+
 .page-book-pages{
     position: absolute;
     right: 25px;
     top: 5px;
 }
+
+.page-book-prices {
+    display: flex;
+    justify-content: center;
+}
+
+.cart-price {
+    margin: 0 10px;
+    padding: 5px;
+    height: 55px;
+    width: 140px;
+    display: block;
+    font-size: 20px;
+    background-color: azure;
+    border-radius: 5px;
+}
+
+.page-price{
+    font-weight: bold;
+    color: rgb(7, 7, 7);
+}
+#user-price {
+    width: 60px;
+    border: none;
+    height: 55px;
+    font-size: 30px;
+    padding-left: 8px;
+    margin-right: 10px;
+    margin-left: -1px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.buy-submit>img {
+    height: 20px;
+    width: 20px;
+}
+
+.buy-submit {
+    height: 55px;
+    width: 60px;
+    border: none;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.buy-submit:hover {
+    background-color: rgb(105, 148, 104);
+}
+
+.page-current-price {
+    background-color: rgb(173, 173, 106);
+}
+
+.cart-owner-price {
+    background-color: rgb(104, 167, 95);
+}
+
 

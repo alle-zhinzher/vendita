@@ -26,8 +26,18 @@ class BookCart extends Component {
                         {this.props.book.discrition}
                     </p>
                     <p className="page-book-props">
-                        <span className="page-book-date">Writed at: {this.props.book.created_at.slice(0, 4)}</span>
-                        <span className="page-book-pages">{this.props.book.pages} - pages</span>
+                        <span className="page-book-date">
+                            Writed at:
+                            <span className="page-black">
+                                {this.props.book.created_at.slice(0, 4)}
+                            </span>
+                        </span>
+                        <span className="page-book-pages">
+                            <span className="page-black">
+                                {this.props.book.pages}
+                            </span>
+                            - pages
+                        </span>
                     </p>
                 </div>
 
@@ -37,32 +47,40 @@ class BookCart extends Component {
                             Current Price: 0$
                         </span>
                         <span className="page-owner-price">
-                            Price: {this.props.book.cost * 0.75}$
+                            Owner Price: {this.props.book.cost * 0.75}$
                             <span className="page-sale">25%</span>
                         </span>
                     </div>
                     :
                     <div className="page-book-prices">
-                        <span className="page-current-price">
-                            Current Price: 0$
+                        <div className="buy-book-form">
+                            <form>
+                                <button type="submit" className="buy-submit">
+                                    <img src="http://127.0.0.1:8000/media/profile_pics/shopping-cart.svg" alt="Logo" />
+                                </button>
+                                <input
+                                    type="number"
+                                    id="user-price"
+                                    className="page-form-input"
+                                    name="current_price"
+                                />
+                            </form>
+                        </div >
+                        <span className="cart-price page-current-price">
+                            Current Price:<br />
+                            <span className="page-price">
+                                0$
+                            </span>
                         </span>
-                        <span className="cart-price">{this.props.book.cost}$</span>
+                        <span className="cart-price cart-owner-price">
+                            Owner price:<br />
+                            <span className="page-price">
+                                {this.props.book.cost}$
+                            </span>
+                        </span>
                     </div>
                 }
-                <div className="buy-book-form">
-                    <form>
-                        <input
-                            type="text"
-                            className="page-form-input"
-                            name="current_price"
-                        />
-                        <div className="page-buy-button">
-                            <button type="submit" className="buy-submit">
-                                <img src="http://127.0.0.1:8000/media/profile_pics/shopping-cart.svg" alt="Logo" />
-                            </button>
-                        </div>
-                    </form>
-                </div >
+
             </section>
         )
     }
