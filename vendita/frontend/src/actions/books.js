@@ -18,7 +18,7 @@ export const getBooks = () => dispatch => {
         .then(res => {
             dispatch({
                 type: GET_BOOKS,
-                payload: res.data
+                payload: res.data.filter(book => book.is_sold_out === false)
             });
         })
         .catch(err => console.log(err));
@@ -31,7 +31,9 @@ export const getBooksByID = (id) => dispatch => {
         .then(res => {
             dispatch({
                 type: GET_BOOK_BY_ID,
-                payload: res.data.filter(book => book.id == id)
+                payload: res.data.filter(book =>
+                    book.id == id &
+                    book.is_sold_out === false)
             });
         })
         .catch(err => console.log(err));
@@ -43,7 +45,8 @@ export const getHootBooks = () => dispatch => {
         .then(res => {
             dispatch({
                 type: GET_HOOT_BOOKS,
-                payload: res.data.filter(book => book.is_hot_price)
+                payload: res.data.filter(book =>
+                    book.is_hot_price & book.is_sold_out === false)
             });
         })
         .catch(err => console.log(err));
@@ -55,7 +58,8 @@ export const getBooksByGenre = (genre) => dispatch => {
         .then(res => {
             dispatch({
                 type: GET_BOOKS_BY_GENRES,
-                payload: res.data.filter(book => book.genre === genre)
+                payload: res.data.filter(book =>
+                    book.genre === genre & book.is_sold_out === false)
             });
         })
         .catch(err => console.log(err));
@@ -66,7 +70,7 @@ export const getAllBooks = () => dispatch => {
         .then(res => {
             dispatch({
                 type: GET_ALL_BOOKS,
-                payload: res.data
+                payload: res.data.filter(book => book.is_sold_out === false)
             });
         })
         .catch(err => console.log(err));
@@ -104,7 +108,10 @@ export const sortBooksByPages = (books, reverse) => dispatch => {
 
 // SEARCH BOOKS
 export const searchBooks = (books, value) => dispatch => {
-    let res = books.filter(book => book.name.toLocaleLowerCase().includes(value.toLocaleLowerCase()))
+    let res = books.filter(book =>
+        book.name.toLocaleLowerCase().includes(value.toLocaleLowerCase()) &
+        book.is_sold_out === false
+    )
     dispatch({
         type: SEARCH_BOOKS,
         payload: res

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 //Router
 import { Redirect } from "react-router-dom";
 //Redux
-import { getUserBooks, deleteBook, newCustomer } from "../../actions/user";
+import { getUserBooks, deleteBook, approveTheSale } from "../../actions/user";
 import { connect } from "react-redux";
 //Components
 import SmallCart from './smallCart/SmallCart';
@@ -15,7 +15,7 @@ class UserBooks extends Component {
 
         getUserBooks: PropTypes.func.isRequired,
         deleteBook: PropTypes.func.isRequired,
-        newCustomer: PropTypes.func.isRequired,
+        approveTheSale: PropTypes.func.isRequired,
         basketLoad: PropTypes.func.isRequired
     };
     componentWillMount() {
@@ -26,7 +26,7 @@ class UserBooks extends Component {
             <SmallCart
                 key={book.id} book={book}
                 delete={this.props.deleteBook}
-                apply={this.props.newCustomer}
+                approve={this.props.approveTheSale}
                 user={this.props.user}
             />
         );
@@ -49,5 +49,5 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, {
     getUserBooks,
     deleteBook,
-    newCustomer,
+    approveTheSale,
 })(UserBooks);

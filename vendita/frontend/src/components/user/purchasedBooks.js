@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 //Redux
-import { getUserBooksInBasket } from "../../actions/user";
+import { getPurchasedUserBooks } from "../../actions/user";
 import { connect } from "react-redux";
 //Components
 import SmallBasketCart from './smallCart/SmallBasketCart';
 
-class UserBasket extends Component {
+class purchasedBooks extends Component {
     static propTypes = {
-        userBookInBasket: PropTypes.array.isRequired,
+        userPurchasedBooks: PropTypes.array.isRequired,
         user: PropTypes.object,
-        basketLoad: PropTypes.object.isRequired,
 
-        getUserBooksInBasket: PropTypes.func.isRequired,
+        getPurchasedUserBooks: PropTypes.func.isRequired,
     };
     componentWillMount() {
-        this.props.getUserBooksInBasket(this.props.user.id);
+        this.props.getPurchasedUserBooks(this.props.user.id);
     }
     render() {
-        const bookPage = this.props.userBookInBasket.map(book =>
+        const bookPage = this.props.userPurchasedBooks.map(book =>
             <SmallBasketCart
                 key={book.id}
                 book={book}
@@ -35,11 +34,10 @@ class UserBasket extends Component {
 }
 
 const mapStateToProps = state => ({
-    userBookInBasket: state.userReducer.userBookInBasket,
-    basketLoad: state.userReducer.basketLoad,
+    userPurchasedBooks: state.userReducer.userPurchasedBooks,
     user: state.authReducer.user,
 });
 
 export default connect(mapStateToProps, {
-    getUserBooksInBasket,
-})(UserBasket);
+    getPurchasedUserBooks,
+})(purchasedBooks);

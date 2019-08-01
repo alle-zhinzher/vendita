@@ -38,6 +38,7 @@ export const DELETE_BOOK = "DELETE_BOOK";
 export const BOOK_CREATION_FAIL = "BOOK_CREATION_FAIL";
 export const NEW_CUSTOMER = "NEW_CUSTOMER";
 export const CUSTOMER_BOOKS = "CUSTOMER_BOOKS";
-
-
+export const PURCASED_BOOKS = "PURCASED_BOOKS";
+export const APPROVE_SALE = "APPROVE_SALE";
+export const USER_SOLD_BOOKS = "USER_SOLD_BOOKS";
 

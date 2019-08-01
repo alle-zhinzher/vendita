@@ -24,13 +24,11 @@ class SmallCart extends Component {
                         className="small-btn btn-view">View
                     </Link>
                     <button
-                        onClick={() => this.props.apply(
+                        onClick={() => this.props.approve(
                             this.props.book.id,
-                            4,
                             this.props.book.created_at,
-                            400
                         )}
-                        className="small-btn btn-apply">Apply</button>
+                        className="small-btn btn-apply">Approve</button>
                     <button
                         onClick={() => this.props.delete(this.props.book.id)}
                         className="small-btn btn-delete">Delete</button>

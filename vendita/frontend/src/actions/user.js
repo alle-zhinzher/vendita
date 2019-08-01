@@ -7,6 +7,8 @@ import {
     DELETE_BOOK,
     NEW_CUSTOMER,
     CUSTOMER_BOOKS,
+    PURCASED_BOOKS,
+    APPROVE_SALE,
 } from "./types";
 
 
@@ -19,7 +21,7 @@ export const getUserBooks = () => (dispatch, getState) => {
         .then(res => {
             dispatch({
                 type: GET_USER_BOOKS,
-                payload: res.data
+                payload: res.data.filter(book => book.is_sold_out === false)
             });
         })
         .catch(err => {
@@ -33,18 +35,53 @@ export const getUserBooks = () => (dispatch, getState) => {
         });
 };
 
+// GET USER BOOKS IN BASKET
 export const getUserBooksInBasket = (customerID) => dispatch => {
     axios.get("/api/books/")
         .then(res => {
             dispatch({
                 type: CUSTOMER_BOOKS,
-                payload: res.data.filter(book => book.customer === customerID)
+                payload: res.data.filter(book =>
+                    book.customer === customerID &
+                    book.is_sold_out === false)
+            });
+        })
+        .catch(err => console.log(err));
+}
+
+// GET USER PURCHASED BOOKS
+export const getPurchasedUserBooks = (customerID) => dispatch => {
+    axios.get("/api/books/")
+        .then(res => {
+            dispatch({
+                type: PURCASED_BOOKS,
+                payload: res.data.filter(book =>
+                    book.customer === customerID &
+                    book.is_sold_out === true
+                )
             });
         })
         .catch(err => console.log(err));
 }
 
 
+// GET USER SOLD BOOKS
+export const getUserSoldBooks = (userID) => dispatch => {
+    axios.get("/api/books/")
+        .then(res => {
+            dispatch({
+                type: USER_SOLD_BOOKS,
+                payload: res.data.filter(book =>
+                    book.owner === userID &
+                    book.is_sold_out === true
+                )
+            });
+        })
+        .catch(err => console.log(err));
+}
+
+
+//CREATE NEW BOOK
 export const createBook = book => (dispatch, getState) => {
     axios
         .post("/api/books/", book, tokenConfig(getState))
@@ -77,6 +114,35 @@ export const deleteBook = id => (dispatch, getState) => {
         })
         .catch(err => console.log(err));
 };
+
+
+
+//APPROVE SALE
+export const approveTheSale = (bookID, date) => (dispatch) => {
+    const data = {
+        "created_at": date,
+        "is_sold_out": true,
+    };
+    axios
+        .put(`/api/books/${bookID}/`, data)
+        .then(res => {
+            dispatch({
+                type: APPROVE_SALE,
+                payload: bookID
+            });
+        })
+        .catch(err => {
+            dispatch({
+                type: BOOK_CREATION_FAIL,
+                payload: {
+                    'errorMsg': err.response.data,
+                    'errorStatus': err.response.status,
+                }
+            });
+        });
+};
+
+
 
 //NEW CUSTOMER
 export const newCustomer = (id, customerID, date, customer_price) => (dispatch, getState) => {

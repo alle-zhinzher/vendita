@@ -19,6 +19,9 @@ import Register from './accounts/Register';
 import NewBook from './user/NewBook';
 import UserBooks from './user/UserBooks';
 import UserBasket from './user/UserBasket';
+
+import purchasedBooks from './user/purchasedBooks';
+
 import BookView from './pageComponents/bookView/BookView';
 // CSS
 import css from './App.css'
@@ -40,9 +43,10 @@ class App extends Component {
                         <Route path="/vendita/register" component={Register} />
                         <Route path="/vendita/login" component={Login} />
                         <Route path="/vendita/book/:bookID" component={BookView} />
-                        <Route path="/vendita/user/book/new" component={NewBook} />
-                        <Route path="/vendita/user/books" component={UserBooks} />
-                        <Route path="/vendita/user/book/basket" component={UserBasket} />
+                        <PrivateRout path="/vendita/user/book/new" component={NewBook} />
+                        <PrivateRout path="/vendita/user/books" component={UserBooks} />
+                        <PrivateRout path="/vendita/user/book/basket" component={UserBasket} />
+                        <PrivateRout path="/vendita/user/book/purchased" component={purchasedBooks} />
                         <Footer />
                     </Router>
                 </div>

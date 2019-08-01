@@ -5,12 +5,16 @@ import {
     DELETE_BOOK,
     NEW_CUSTOMER,
     CUSTOMER_BOOKS,
+    PURCASED_BOOKS,
+    APPROVE_SALE,
 } from '../actions/types.js';
 
 const initialState = {
     customerLoading: false,
     userBooks: [],
     userBookInBasket: [],
+    userPurchasedBooks: [],
+    userSoldBooks: [],
     bookPosted: false,
     errorMsg: {},
     errorStatus: null,
@@ -28,6 +32,10 @@ export default function (state = initialState, action) {
                 ...state,
                 customerLoading: action.payload,
             };
+        case APPROVE_SALE:
+            return {
+                ...state,
+            };
         case DELETE_BOOK:
             return {
                 ...state,
@@ -43,6 +51,16 @@ export default function (state = initialState, action) {
                 ...state,
                 userBookInBasket: action.payload,
                 customerLoading: false,
+            }
+        case USER_SOLD_BOOKS:
+            return {
+                ...state,
+                userSoldBooks: action.payload,
+            }
+        case PURCASED_BOOKS:
+            return {
+                ...state,
+                userPurchasedBooks: action.payload,
             }
         case BOOK_CREATION_FAIL:
             return {
