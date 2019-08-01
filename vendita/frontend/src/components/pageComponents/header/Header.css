@@ -110,7 +110,7 @@ nav label.toggleSubmenu{
     } 
 
 }
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 900px) {
     .logo {
         justify-content: center;
     }

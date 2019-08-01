@@ -25,7 +25,7 @@ aside label.toggleSubmenu{
     display: none;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 900px) {
 
     aside {
         width: 100%;
