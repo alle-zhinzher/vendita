@@ -31,9 +31,7 @@ export const getBooksByID = (id) => dispatch => {
         .then(res => {
             dispatch({
                 type: GET_BOOK_BY_ID,
-                payload: res.data.filter(book =>
-                    book.id == id &
-                    book.is_sold_out === false)
+                payload: res.data.filter(book => book.id == id)
             });
         })
         .catch(err => console.log(err));

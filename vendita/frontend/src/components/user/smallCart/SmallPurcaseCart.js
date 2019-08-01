@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //CSS STYLES
 import css from './SmallCart.css'
 
-class SmallBasketCart extends Component {
+class SmallPurcaseCart extends Component {
     render() {
         return (
             <section className="small-cart">
@@ -22,23 +22,23 @@ class SmallBasketCart extends Component {
                     <h5 className="max-price">
                         My Price: <span>{this.props.book.customer_price}</span>
                     </h5>
-                    <h2 className="book-cart-status">
-                        Status: Wait for owner apply
-                    </h2>
+
+                    {this.props.sold ?
+                        <h2 className="book-cart-status">
+                            Status: Book sold out!
+                        </h2>
+                        :
+                        <h2 className="book-cart-status">
+                            Status: Its your book!
+                        </h2>
+                    }
                 </div>
                 <div className="cart-button">
                     <Link
                         to={`/vendita/book/${this.props.book.id}`}
-                        className="small-btn btn-view">
+                        className="small-btn btn-view btn-purc">
                         View
                     </Link>
-                    <button
-                        onClick={() =>
-                            this.props.cencel(this.props.book.id, this.props.book.created_at)
-                        }
-                        className="small-btn btn-delete">
-                        Delete
-                    </button>
                 </div>
             </section >
         )
@@ -46,4 +46,4 @@ class SmallBasketCart extends Component {
 }
 
 
-export default SmallBasketCart;
+export default SmallPurcaseCart;

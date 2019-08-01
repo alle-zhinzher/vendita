@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import { getPurchasedUserBooks } from "../../actions/user";
 import { connect } from "react-redux";
 //Components
-import SmallBasketCart from './smallCart/SmallBasketCart';
+import SmallPurcaseCart from './smallCart/SmallPurcaseCart';
 
-class purchasedBooks extends Component {
+class PurchasedBooks extends Component {
     static propTypes = {
         userPurchasedBooks: PropTypes.array.isRequired,
         user: PropTypes.object,
@@ -18,9 +18,10 @@ class purchasedBooks extends Component {
     }
     render() {
         const bookPage = this.props.userPurchasedBooks.map(book =>
-            <SmallBasketCart
+            <SmallPurcaseCart
                 key={book.id}
                 book={book}
+                sold={false}
             />
         );
         return (
@@ -40,4 +41,4 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
     getPurchasedUserBooks,
-})(purchasedBooks);
+})(PurchasedBooks);

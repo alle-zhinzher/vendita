@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 //Router
 import { Redirect } from "react-router-dom";
 //Redux
-import { getUserBooksInBasket } from "../../actions/user";
+import { getUserBooksInBasket, cencelUserPurchase } from "../../actions/user";
 import { connect } from "react-redux";
 //Components
 import SmallBasketCart from './smallCart/SmallBasketCart';
@@ -14,6 +14,7 @@ class UserBasket extends Component {
         user: PropTypes.object,
         basketLoad: PropTypes.object.isRequired,
 
+        cencelUserPurchase: PropTypes.func.isRequired,
         getUserBooksInBasket: PropTypes.func.isRequired,
     };
     componentWillMount() {
@@ -24,6 +25,7 @@ class UserBasket extends Component {
             <SmallBasketCart
                 key={book.id}
                 book={book}
+                cencel={this.props.cencelUserPurchase}
             />
         );
         return (
@@ -44,4 +46,5 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, {
     getUserBooksInBasket,
+    cencelUserPurchase,
 })(UserBasket);

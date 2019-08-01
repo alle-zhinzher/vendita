@@ -9,6 +9,8 @@ import {
     CUSTOMER_BOOKS,
     PURCASED_BOOKS,
     APPROVE_SALE,
+    USER_SOLD_BOOKS,
+    CENCEL_PURCHASE,
 } from "./types";
 
 
@@ -115,8 +117,6 @@ export const deleteBook = id => (dispatch, getState) => {
         .catch(err => console.log(err));
 };
 
-
-
 //APPROVE SALE
 export const approveTheSale = (bookID, date) => (dispatch) => {
     const data = {
@@ -170,3 +170,28 @@ export const newCustomer = (id, customerID, date, customer_price) => (dispatch, 
         });
 };
 
+//CENCEL_PURCHASE
+export const cencelUserPurchase = (bookID, date) => (dispatch) => {
+    const data = {
+        "created_at": date,
+        "customer": null,
+        "customer_price": 0
+    };
+    axios
+        .put(`/api/books/${bookID}/`, data)
+        .then(res => {
+            dispatch({
+                type: CENCEL_PURCHASE,
+                payload: bookID
+            });
+        })
+        .catch(err => {
+            dispatch({
+                type: BOOK_CREATION_FAIL,
+                payload: {
+                    'errorMsg': err.response.data,
+                    'errorStatus': err.response.status,
+                }
+            });
+        });
+};

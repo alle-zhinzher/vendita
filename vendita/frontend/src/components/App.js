@@ -19,9 +19,8 @@ import Register from './accounts/Register';
 import NewBook from './user/NewBook';
 import UserBooks from './user/UserBooks';
 import UserBasket from './user/UserBasket';
-
-import purchasedBooks from './user/purchasedBooks';
-
+import PurchasedBooks from './user/PurchasedBooks';
+import UserSoldBooks from './user/UserSoldBooks';
 import BookView from './pageComponents/bookView/BookView';
 // CSS
 import css from './App.css'
@@ -46,7 +45,8 @@ class App extends Component {
                         <PrivateRout path="/vendita/user/book/new" component={NewBook} />
                         <PrivateRout path="/vendita/user/books" component={UserBooks} />
                         <PrivateRout path="/vendita/user/book/basket" component={UserBasket} />
-                        <PrivateRout path="/vendita/user/book/purchased" component={purchasedBooks} />
+                        <PrivateRout path="/vendita/user/book/purchased" component={PurchasedBooks} />
+                        <PrivateRout path="/vendita/user/book/sold" component={UserSoldBooks} />
                         <Footer />
                     </Router>
                 </div>

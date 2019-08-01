@@ -103,6 +103,12 @@ class Header extends Component {
                                     </li>
                                     <li>
                                         <Link
+                                            className="link"
+                                            to="/vendita/user/book/sold">sold books
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
                                             onClick={this.props.logout}
                                             className="link"
                                             to="/vendita">logout

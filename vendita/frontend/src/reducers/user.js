@@ -7,6 +7,8 @@ import {
     CUSTOMER_BOOKS,
     PURCASED_BOOKS,
     APPROVE_SALE,
+    USER_SOLD_BOOKS,
+    CENCEL_PURCHASE,
 } from '../actions/types.js';
 
 const initialState = {
@@ -39,14 +41,23 @@ export default function (state = initialState, action) {
         case DELETE_BOOK:
             return {
                 ...state,
-                userBooks: state.userBooks.filter(book => book.id !== action.payload)
+                userBooks: state.userBooks
+                    .filter(book => book.id !== action.payload)
             };
         case GET_USER_BOOKS:
             return {
                 ...state,
                 userBooks: action.payload,
             }
+        case CENCEL_PURCHASE:
+            return {
+                ...state,
+                userBookInBasket: state.userBookInBasket
+                    .filter(book => book.id !== action.payload),
+                customerLoading: false,
+            }
         case CUSTOMER_BOOKS:
+
             return {
                 ...state,
                 userBookInBasket: action.payload,
