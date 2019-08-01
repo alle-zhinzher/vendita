@@ -6,20 +6,20 @@
     font-size: 50px;
     font-weight: bold;
     color: rgb(0, 0, 0);
-    background-color: rgb(168, 168, 168);
+    background-color: rgb(221, 214, 172);;
 }
 
 .slider-controler:hover {
-  background-color: #8b8b8b;
+  background-color: rgb(179, 167, 108);
 }
 
 .slider-controler:active:first-child {
-  background-color: #858383;
+  background-color: rgb(167, 151, 73);
   color: #570606;
 }
 
 .slider-controler:active:last-child {
-  background-color: #858383;
+  background-color: rgb(167, 151, 73);
   color: rgb(7, 61, 19);
 }
 
