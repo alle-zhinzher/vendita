@@ -36,7 +36,6 @@ class BookView extends Component {
                         customerLoading={this.props.customerLoading}
                     />
                 )}
-                <h3>Item Not Found 404</h3>
             </section>
         )
     }

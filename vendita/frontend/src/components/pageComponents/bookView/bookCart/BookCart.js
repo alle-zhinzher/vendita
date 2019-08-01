@@ -81,14 +81,14 @@ class BookCart extends Component {
                                 :
                                 ""
                         }
-                    </div >
-                    <span className="cart-price page-current-price">
+                    </div>
+                    <span className="page-price-w page-current-price">
                         Current Price:<br />
                         <span className="page-price">
                             0$
                             </span>
                     </span>
-                    <span className="cart-price cart-owner-price">
+                    <span className="page-price-w cart-owner-price">
                         Owner price:<br />
                         <span className="page-price">
                             {this.props.book.is_hot_price ?

@@ -4,11 +4,13 @@ import {
     GET_USER_BOOKS,
     DELETE_BOOK,
     NEW_CUSTOMER,
+    CUSTOMER_BOOKS,
 } from '../actions/types.js';
 
 const initialState = {
     customerLoading: false,
     userBooks: [],
+    userBookInBasket: [],
     bookPosted: false,
     errorMsg: {},
     errorStatus: null,
@@ -35,6 +37,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 userBooks: action.payload,
+            }
+        case CUSTOMER_BOOKS:
+            return {
+                ...state,
+                userBookInBasket: action.payload,
                 customerLoading: false,
             }
         case BOOK_CREATION_FAIL:

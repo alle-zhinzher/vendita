@@ -6,6 +6,7 @@ import {
     GET_USER_BOOKS,
     DELETE_BOOK,
     NEW_CUSTOMER,
+    CUSTOMER_BOOKS,
 } from "./types";
 
 
@@ -31,6 +32,18 @@ export const getUserBooks = () => (dispatch, getState) => {
             });
         });
 };
+
+export const getUserBooksInBasket = (customerID) => dispatch => {
+    axios.get("/api/books/")
+        .then(res => {
+            dispatch({
+                type: CUSTOMER_BOOKS,
+                payload: res.data.filter(book => book.customer === customerID)
+            });
+        })
+        .catch(err => console.log(err));
+}
+
 
 export const createBook = book => (dispatch, getState) => {
     axios

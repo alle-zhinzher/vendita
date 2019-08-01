@@ -37,6 +37,7 @@ export const GET_USER_BOOKS = "GET_USER_BOOKS";
 export const DELETE_BOOK = "DELETE_BOOK";
 export const BOOK_CREATION_FAIL = "BOOK_CREATION_FAIL";
 export const NEW_CUSTOMER = "NEW_CUSTOMER";
+export const CUSTOMER_BOOKS = "CUSTOMER_BOOKS";
 
 
 

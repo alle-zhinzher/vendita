@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-//Router
-import { Redirect } from "react-router-dom";
 //Redux
 import { getUserBooksInBasket } from "../../actions/user";
 import { connect } from "react-redux";

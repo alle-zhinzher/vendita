@@ -1,6 +1,7 @@
 .page-wrapp {
     width: 80%;
     margin: 20px auto;
+    z-index: 5;
 }
 
 .page-book-image > img {
@@ -69,7 +70,7 @@
     margin-top: 40px;
 }
 
-.cart-price {
+.page-price-w {
     margin: 0 10px;
     padding: 5px;
     height: 55px;
@@ -144,7 +145,7 @@
 }
 
 @media screen and (max-width: 440px) {
-    .cart-price {
+    .page-price-w {
         margin: 5px auto;
         width: 260px;
     }
