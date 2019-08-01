@@ -69,7 +69,7 @@ class NewBook extends Component {
         } = this.state;
 
         if (this.props.bookPosted) {
-            return <Redirect to="/vendita" />;
+            return <Redirect to="/vendita/user/books" />;
         }
 
         return (

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 //css
 import css from './Slide.css'
 
@@ -21,7 +22,14 @@ class Slide extends Component {
                         =
                         <span className="new-price">{this.props.book.cost * 0.75}$</span>
                     </section>
-                    <button className="btn-buy">Buy Now</button>
+                    <Link
+                        className="slide-view"
+                        to={`/vendita/book/${this.props.book.id}`}>
+                        <img
+                            className="img-buy-button"
+                            src="http://127.0.0.1:8000/media/profile_pics/shopping-cart.svg"
+                            alt="Logo" />
+                    </Link>
                 </div>
             </ div >
         )

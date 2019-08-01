@@ -79,6 +79,7 @@
     border-radius: 3px;
 }
 .cart-buy-button {
+    padding-top: 7px;
     font-size: 18px;
     background-color: rgb(160, 160, 160);
     border: 1px solid  rgb(87, 87, 87);
@@ -89,7 +90,7 @@
     height: 40px;
     width: 90%;
 }
-.cart-buy-button img {
+.img-buy-button-cart {
     height: 20px;
     width: 35px;
 }

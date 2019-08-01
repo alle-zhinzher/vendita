@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+//Router
+import { Link } from "react-router-dom";
 //CSS Styles
 import css from './Cart.css'
 
@@ -43,10 +44,15 @@ class Cart extends Component {
                         }
                     </span></h2>
                 </div>
-                <button className="cart-buy-button">
-                    <img src="http://127.0.0.1:8000/media/profile_pics/shopping-cart.svg" alt="Logo" />
-                </button>
-
+                <Link
+                    className="cart-buy-button"
+                    to={`/vendita/book/${this.props.book.id}`}
+                >
+                    <img
+                        className="img-buy-button-cart"
+                        src="http://127.0.0.1:8000/media/profile_pics/shopping-cart.svg"
+                        alt="Logo" />
+                </Link>
             </div >
         )
     }

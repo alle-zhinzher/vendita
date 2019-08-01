@@ -13,6 +13,7 @@ import {
 
 const initialState = {
     customerLoading: false,
+    bookApproved: false,
     userBooks: [],
     userBookInBasket: [],
     userPurchasedBooks: [],
@@ -37,6 +38,7 @@ export default function (state = initialState, action) {
         case APPROVE_SALE:
             return {
                 ...state,
+                bookApproved: true
             };
         case DELETE_BOOK:
             return {
@@ -54,10 +56,8 @@ export default function (state = initialState, action) {
                 ...state,
                 userBookInBasket: state.userBookInBasket
                     .filter(book => book.id !== action.payload),
-                customerLoading: false,
             }
         case CUSTOMER_BOOKS:
-
             return {
                 ...state,
                 userBookInBasket: action.payload,
@@ -67,6 +67,7 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 userSoldBooks: action.payload,
+                bookApproved: false,
             }
         case PURCASED_BOOKS:
             return {

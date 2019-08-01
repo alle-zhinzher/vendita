@@ -12,6 +12,7 @@ class UserBooks extends Component {
     static propTypes = {
         userBooks: PropTypes.array.isRequired,
         user: PropTypes.object,
+        bookApproved: PropTypes.bool.isRequired,
 
         getUserBooks: PropTypes.func.isRequired,
         deleteBook: PropTypes.func.isRequired,
@@ -22,6 +23,9 @@ class UserBooks extends Component {
         this.props.getUserBooks();
     }
     render() {
+        if (this.props.bookApproved) {
+            return <Redirect to="/vendita/user/book/sold" />;
+        }
         const bookPage = this.props.userBooks.map(book =>
             <SmallCart
                 key={book.id} book={book}
@@ -43,6 +47,7 @@ class UserBooks extends Component {
 
 const mapStateToProps = state => ({
     userBooks: state.userReducer.userBooks,
+    bookApproved: state.userReducer.bookApproved,
     user: state.authReducer.user,
 });
 

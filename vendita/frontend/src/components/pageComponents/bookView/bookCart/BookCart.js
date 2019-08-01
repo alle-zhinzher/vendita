@@ -22,7 +22,7 @@ class BookCart extends Component {
     onChange = e => this.setState({ customer_price: e.target.value });
     render() {
         if (this.props.customerLoading) {
-            return <Redirect to="/vendita/user/books" />;
+            return <Redirect to="/vendita/user/book/basket" />;
         }
         return (
             <section className='page-wrapp'>
