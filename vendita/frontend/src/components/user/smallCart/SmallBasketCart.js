@@ -37,7 +37,7 @@ class SmallBasketCart extends Component {
                             this.props.cencel(this.props.book.id, this.props.book.created_at)
                         }
                         className="small-btn btn-delete">
-                        Delete
+                        Cancel
                     </button>
                 </div>
             </section >

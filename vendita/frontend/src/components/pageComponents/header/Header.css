@@ -104,10 +104,13 @@ nav label.toggleSubmenu{
         padding-left: 10px;
     }
     .logo h1 {
-        padding-left: 5px;
+        padding-left: 15px;
         padding-top: 10px; 
-        font-size: 18px; 
+        font-size: 22px; 
     } 
+    nav > ul li .link{
+        width: 130px;
+    }
 
 }
 @media screen and (max-width: 900px) {

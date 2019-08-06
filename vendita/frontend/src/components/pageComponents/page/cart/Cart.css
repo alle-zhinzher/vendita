@@ -21,7 +21,7 @@
 
 .book-name {
     position: relative;
-    min-height: 70px;
+    min-height: 90px;
     border-bottom: 1px solid gray;
 }
 
@@ -34,6 +34,7 @@
 }
 .cart-book-author {
     color:rgb(59, 55, 55);
+    height: 74px;
 }
 .book-discripion p{
     overflow: hidden;
@@ -85,7 +86,7 @@
     border: 1px solid  rgb(87, 87, 87);
     border-radius: 5px;
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     left: 5%;
     height: 40px;
     width: 90%;
@@ -113,20 +114,26 @@
 
 @media screen and (max-width: 1200px) {
     .sale {
-        font-size: 14px;
-        width: 30px;
-        margin-left: 2px;
+        display: none;
     }   
 }
 
 
 @media screen and (max-width: 1050px) {
     .content-section {
+        padding-top: 10px;
+        height: 650px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .content-section {
         width: 100%;
-        padding-top: 70px;
+        padding-top: 60px;
         height: 700px;
     }
 }
+
 
 @media screen and (max-width: 800px) {
     .content-section {

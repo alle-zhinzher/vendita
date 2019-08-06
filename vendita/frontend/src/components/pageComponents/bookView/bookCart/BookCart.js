@@ -7,16 +7,21 @@ import css from './BookCart.css';
 
 class BookCart extends Component {
     state = {
-        customer_price: '',
+        customer_price: 0,
+        error: '',
     }
     onSubmit = e => {
         e.preventDefault();
-        this.props.newCustomer(
-            this.props.book.id,
-            this.props.user.id,
-            this.props.book.created_at,
-            this.state.customer_price
-        );
+        if (this.state.customer_price > this.props.book.customer_price) {
+            this.props.newCustomer(
+                this.props.book.id,
+                this.props.user.id,
+                this.props.book.created_at,
+                this.state.customer_price
+            );
+        } else {
+            this.setState({ error: "New price must bee bigger then current" })
+        }
     };
 
     onChange = e => this.setState({ customer_price: e.target.value });
@@ -26,6 +31,7 @@ class BookCart extends Component {
         }
         return (
             <section className='page-wrapp'>
+                <p className="error-box">{this.state.error}</p>
                 <div className="page-book-image">
                     <img src={this.props.book.image} alt="book-image" />
                 </div>
@@ -85,8 +91,8 @@ class BookCart extends Component {
                     <span className="page-price-w page-current-price">
                         Current Price:<br />
                         <span className="page-price">
-                            0$
-                            </span>
+                            {this.props.book.customer_price}
+                        </span>
                     </span>
                     <span className="page-price-w cart-owner-price">
                         Owner price:<br />

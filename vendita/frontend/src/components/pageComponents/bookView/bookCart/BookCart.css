@@ -28,6 +28,17 @@
     margin-left: 5px;
 }
 
+.error-box {
+    background-color: rgb(94, 23, 23);
+    width: 50%;
+    color: rgb(165, 138, 87);
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
 .page-book-discripion{
     width: 60%;
     margin: 8px auto;
