@@ -1,0 +1,33 @@
+.about-wrapp {
+    width: 80%;
+    margin: auto;
+    border: 2px solid rgb(128, 128, 128);
+    border-radius: 10px;
+    color: rgb(54, 52, 47);
+    font-size: 18px;
+    padding: 10px 40px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+.about-wrapp>h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.cart-title {
+    margin-top: 30px;
+}
+
+.about-cart {
+    border: 2px solid rgb(128, 128, 128);
+    border-radius: 15px;
+    width: 300px;
+    height: 300px;
+}
+
+@media screen and (max-width: 440px) {
+    .about-cart {
+        width: 250px;
+        height: 250px;
+    }
+}

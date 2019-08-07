@@ -11,6 +11,7 @@ import { loadUser } from "../actions/auth";
 //Pages
 import Header from './pageComponents/header/Header';
 import Aside from './pageComponents/aside/Aside';
+import About from './pageComponents/about/About';
 import Page from './pageComponents/page/Page';
 import Slider from './pageComponents/slider/Slider';
 import Footer from './pageComponents/footer/Footer';
@@ -38,10 +39,10 @@ class App extends Component {
                         <Aside />
                         <Route path="/vendita" exact component={Slider} />
                         <Route path="/vendita/books" component={Page} />
-                        <PrivateRout path="/about" component={Page} />
+                        <Route path="/vendita/about" component={About} />
+                        <Route path="/vendita/book/:bookID" component={BookView} />
                         <Route path="/vendita/register" component={Register} />
                         <Route path="/vendita/login" component={Login} />
-                        <Route path="/vendita/book/:bookID" component={BookView} />
                         <PrivateRout path="/vendita/user/book/new" component={NewBook} />
                         <PrivateRout path="/vendita/user/books" component={UserBooks} />
                         <PrivateRout path="/vendita/user/book/basket" component={UserBasket} />

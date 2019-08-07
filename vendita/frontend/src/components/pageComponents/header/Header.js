@@ -64,7 +64,7 @@ class Header extends Component {
                                     to="/vendita/books">all</Link></li>
                             </ul>
                         </li>
-                        <li><Link className="link" to="/about">about</Link></li>
+                        <li><Link className="link" to="/vendita/about">about</Link></li>
 
                         {isAuthenticated ?
                             <li>
