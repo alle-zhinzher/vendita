@@ -14,6 +14,7 @@ function Paginator(props) {
                 activePage={props.activePage}
                 action={props.prevPage}
                 actionValue={props.activePage}
+                actionPageName={props.actionPageName}
                 buttonText={"<"}
                 displayClass="paginator-scroll"
             />
@@ -22,6 +23,7 @@ function Paginator(props) {
                 activePage={props.activePage}
                 action={props.jumpToPage}
                 actionValue={props.activePage - 1}
+                actionPageName={props.actionPageName}
                 buttonText={props.activePage - 1}
                 displayClass=""
             />
@@ -30,6 +32,7 @@ function Paginator(props) {
                 activePage={props.activePage}
                 action={props.jumpToPage}
                 actionValue={props.activePage}
+                actionPageName={props.actionPageName}
                 buttonText={props.activePage}
                 displayClass="paginator-active"
             />
@@ -38,6 +41,7 @@ function Paginator(props) {
                 activePage={props.activePage}
                 action={props.jumpToPage}
                 actionValue={props.activePage + 1}
+                actionPageName={props.actionPageName}
                 buttonText={props.activePage + 1}
                 displayClass=""
             />
@@ -46,14 +50,14 @@ function Paginator(props) {
                 activePage={props.activePage}
                 action={props.nextPage}
                 actionValue={props.activePage}
+                actionPageName={props.actionPageName}
                 buttonText={'>'}
                 displayClass="paginator-scroll"
             />
-
             {props.checkSum === props.booksCount ?
                 null
                 :
-                props.resetPaginator(props.booksCount)
+                props.resetPaginator(props.booksCount, props.actionPageName)
             }
         </section>
 

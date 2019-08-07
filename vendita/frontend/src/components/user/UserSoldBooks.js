@@ -8,7 +8,7 @@ import SmallPurcaseCart from './smallCart/SmallPurcaseCart';
 
 class purchasedBooks extends Component {
     static propTypes = {
-        userSoldBooks: PropTypes.array.isRequired,
+        userSoldBooks: PropTypes.array,
         user: PropTypes.object,
 
         getUserSoldBooks: PropTypes.func.isRequired,

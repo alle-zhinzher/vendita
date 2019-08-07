@@ -17,10 +17,10 @@ class SmallBasketCart extends Component {
                 </div>
                 <div className="cart-property">
                     <h5 className="max-price">
-                        Price: <span>{this.props.book.cost}</span>
+                        Owner Price: <span>{this.props.book.cost}$</span>
                     </h5>
                     <h5 className="max-price">
-                        My Price: <span>{this.props.book.customer_price}</span>
+                        My Price: <span>{this.props.book.customer_price}$</span>
                     </h5>
                     <h2 className="book-cart-status">
                         Status: Wait for owner apply

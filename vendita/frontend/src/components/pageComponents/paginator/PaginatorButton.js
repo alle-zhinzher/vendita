@@ -4,7 +4,7 @@ function PaginatorButton(props) {
     return (
         <button
             className={props.status ? "disable" : props.displayClass}
-            onClick={() => props.action(props.actionValue)}>
+            onClick={() => props.action(props.actionValue, props.actionPageName)}>
             {props.buttonText}
         </button>
     )

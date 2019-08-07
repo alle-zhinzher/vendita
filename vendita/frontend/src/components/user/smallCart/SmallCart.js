@@ -21,10 +21,10 @@ class SmallCart extends Component {
                 </div>
                 <div className="cart-property">
                     <h5 className="max-price">
-                        Price: <span>{this.props.book.cost}</span>
+                        My Price: <span>{this.props.book.cost}$</span>
                     </h5>
                     <h5 className="max-price">
-                        Current Price: <span>{this.props.book.customer_price}</span>
+                        Current Price: <span>{this.props.book.customer_price}$</span>
                     </h5>
                 </div>
                 <div className="cart-button">

@@ -10,14 +10,13 @@ import SmallCart from './smallCart/SmallCart';
 
 class UserBooks extends Component {
     static propTypes = {
-        userBooks: PropTypes.array.isRequired,
+        userBooks: PropTypes.array,
         user: PropTypes.object,
-        bookApproved: PropTypes.bool.isRequired,
+        bookApproved: PropTypes.bool,
 
         getUserBooks: PropTypes.func.isRequired,
         deleteBook: PropTypes.func.isRequired,
         approveTheSale: PropTypes.func.isRequired,
-        basketLoad: PropTypes.func.isRequired
     };
     componentWillMount() {
         this.props.getUserBooks();

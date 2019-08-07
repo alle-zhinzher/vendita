@@ -50,6 +50,7 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 userBooks: action.payload,
+                bookPosted: false,
             }
         case CENCEL_PURCHASE:
             return {
@@ -62,6 +63,7 @@ export default function (state = initialState, action) {
                 ...state,
                 userBookInBasket: action.payload,
                 customerLoading: false,
+
             }
         case USER_SOLD_BOOKS:
             return {

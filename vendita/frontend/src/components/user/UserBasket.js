@@ -10,9 +10,9 @@ import SmallBasketCart from './smallCart/SmallBasketCart';
 
 class UserBasket extends Component {
     static propTypes = {
-        userBookInBasket: PropTypes.array.isRequired,
+        userBookInBasket: PropTypes.array,
         user: PropTypes.object,
-        basketLoad: PropTypes.object.isRequired,
+        basketLoad: PropTypes.object,
 
         cencelUserPurchase: PropTypes.func.isRequired,
         getUserBooksInBasket: PropTypes.func.isRequired,

@@ -16,11 +16,14 @@ class SmallPurcaseCart extends Component {
                     <h5>Author: <span className="grey">{this.props.book.author}</span></h5>
                 </div>
                 <div className="cart-property">
+
                     <h5 className="max-price">
-                        Price: <span>{this.props.book.cost}</span>
+                        {this.props.sold ? 'My Price: ' : "Owner Price: "}
+                        <span>{this.props.book.cost}$</span>
                     </h5>
                     <h5 className="max-price">
-                        My Price: <span>{this.props.book.customer_price}</span>
+                        {this.props.sold ? "Customer price: " : 'My Price: '}
+                        <span>{this.props.book.customer_price}$</span>
                     </h5>
 
                     {this.props.sold ?

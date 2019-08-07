@@ -11,8 +11,8 @@ import { connect } from "react-redux";
 class NewBook extends Component {
 
     static propTypes = {
-        bookPosted: PropTypes.bool.isRequired,
-        createBook: PropTypes.func.isRequired,
+        bookPosted: PropTypes.bool,
+        createBook: PropTypes.func,
     };
 
     state = {

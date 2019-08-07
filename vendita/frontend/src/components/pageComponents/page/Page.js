@@ -11,7 +11,7 @@ import {
 } from '../../../actions/paginator';
 //Components
 import Cart from './cart/Cart';
-import Paginator from './paginator/Paginator';
+import Paginator from '../paginator/Paginator';
 //CSS Styles
 import css from './Page.css'
 
@@ -31,14 +31,23 @@ class BookList extends Component {
 
     render() {
         const bookPage = this.props.sortedBooks.map((book, index = 1) =>
-            <Cart key={book.id} book={book} index={index++} active_page={this.props.activePage} />
+            <Cart
+                key={book.id}
+                book={book}
+                index={index++}
+                active_page={this.props.activePage} />
         )
         return (
 
             <section className="content-section" >
                 <section className="book-page">
                     {this.props.sortedBooks.map((book, index = 1) =>
-                        <Cart key={book.id} book={book} index={index++} active_page={this.props.activePage} />
+                        <Cart
+                            key={book.id}
+                            book={book}
+                            index={index++}
+                            active_page={this.props.activePage}
+                        />
                     )
                     }
                 </section>
@@ -57,6 +66,7 @@ class BookList extends Component {
                     resetPaginator={this.props.resetPaginator}
                     jumpToPage={this.props.jumpToPage}
                     checkSum={this.props.checkSum}
+                    actionPageName={"main"}
                 />
 
             </section >

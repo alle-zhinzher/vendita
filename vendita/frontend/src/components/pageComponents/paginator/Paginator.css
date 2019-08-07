@@ -1,3 +1,6 @@
+.paginator {
+    margin-bottom: 20px;
+}
 .paginator > button {
     font-weight: bold;
     width: 40px;
