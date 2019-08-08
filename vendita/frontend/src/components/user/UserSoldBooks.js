@@ -26,6 +26,7 @@ class purchasedBooks extends Component {
         );
         return (
             <section className="content-section" >
+                <h3 className="user-title">Sold out Books</h3>
                 <div className="my-books-wrapp">
                     {bookPage}
                 </div>

@@ -121,7 +121,12 @@
 
 .my-books-wrapp {
     overflow-x: auto;
-    height: 560px;
+    height: 520px;
+}
+.user-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
 }
 
 

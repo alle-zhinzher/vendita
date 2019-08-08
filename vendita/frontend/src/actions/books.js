@@ -107,7 +107,12 @@ export const sortBooksByPages = (books, reverse) => dispatch => {
 // SEARCH BOOKS
 export const searchBooks = (books, value) => dispatch => {
     let res = books.filter(book =>
-        book.name.toLocaleLowerCase().includes(value.toLocaleLowerCase()) &
+        (
+            book.name.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+            |
+            book.author.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+        )
+        &
         book.is_sold_out === false
     )
     dispatch({

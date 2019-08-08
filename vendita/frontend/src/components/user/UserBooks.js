@@ -36,6 +36,7 @@ class UserBooks extends Component {
 
         return (
             <section className="content-section" >
+                <h3 className="user-title">My books</h3>
                 <div className="my-books-wrapp">
                     {bookPage}
                 </div>

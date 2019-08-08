@@ -29,7 +29,8 @@ class UserBasket extends Component {
             />
         );
         return (
-            <section className="content-section" >
+            <section className="content-section">
+                <h3 className="user-title">User Basket</h3>
                 <div className="my-books-wrapp">
                     {bookPage}
                 </div>
