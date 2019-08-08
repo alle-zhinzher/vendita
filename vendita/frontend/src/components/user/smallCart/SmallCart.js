@@ -32,12 +32,17 @@ class SmallCart extends Component {
                         to={`/vendita/book/${this.props.book.id}`}
                         className="small-btn btn-view">View
                     </Link>
-                    <button
-                        onClick={() => this.props.approve(
-                            this.props.book.id,
-                            this.props.book.created_at,
-                        )}
-                        className="small-btn btn-apply">Approve</button>
+                    {this.props.book.customer_price === 0 ?
+                        ""
+                        :
+                        <button
+                            onClick={() => this.props.approve(
+                                this.props.book.id,
+                                this.props.book.created_at,
+                            )}
+                            className="small-btn btn-apply">Approve
+                        </button>
+                    }
                     <button
                         onClick={() => this.props.delete(this.props.book.id)}
                         className="small-btn btn-delete">Delete</button>
