@@ -27,7 +27,6 @@ class NewBook extends Component {
         image: null,
     }
 
-
     onSubmit = e => {
         e.preventDefault();
         const {
@@ -50,14 +49,14 @@ class NewBook extends Component {
         newBook.append('cost', cost)
         newBook.append('image', image, image.name)
 
-
         this.props.createBook(newBook);
     }
 
     onChange = e => this.setState({ [e.target.name]: e.target.value });
-    hendleFile = e => this.setState({ image: e.target.files[0] });
-    render() {
 
+    hendleFile = e => this.setState({ image: e.target.files[0] });
+
+    render() {
         const {
             name,
             author,

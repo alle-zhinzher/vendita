@@ -9,12 +9,12 @@ import { Provider } from 'react-redux';
 import store from '../store';
 import { loadUser } from "../actions/auth";
 //Pages
-import Header from './pageComponents/header/Header';
-import Aside from './pageComponents/aside/Aside';
-import About from './pageComponents/about/About';
-import Page from './pageComponents/page/Page';
-import Slider from './pageComponents/slider/Slider';
-import Footer from './pageComponents/footer/Footer';
+import Header from './layout/header/Header';
+import Aside from './layout/aside/Aside';
+import About from './layout/about/About.jsx';
+import Page from './layout/page/Page';
+import Slider from './layout/slider/Slider';
+import Footer from './layout/footer/Footer.jsx';
 import Login from './accounts/Login';
 import Register from './accounts/Register';
 import NewBook from './user/NewBook';
@@ -22,7 +22,7 @@ import UserBooks from './user/UserBooks';
 import UserBasket from './user/UserBasket';
 import PurchasedBooks from './user/PurchasedBooks';
 import UserSoldBooks from './user/UserSoldBooks';
-import BookView from './pageComponents/bookView/BookView';
+import BookView from './layout/bookView/BookView';
 // CSS
 import css from './App.css'
 

@@ -6,21 +6,22 @@ import { Redirect } from "react-router-dom";
 import { getUserBooks, deleteBook, approveTheSale } from "../../actions/user";
 import { connect } from "react-redux";
 //Components
-import SmallCart from './smallCart/SmallCart';
+import SmallCart from './smallCart/SmallCart.jsx';
 
 class UserBooks extends Component {
     static propTypes = {
         userBooks: PropTypes.array,
         user: PropTypes.object,
         bookApproved: PropTypes.bool,
-
         getUserBooks: PropTypes.func.isRequired,
         deleteBook: PropTypes.func.isRequired,
         approveTheSale: PropTypes.func.isRequired,
     };
+
     componentWillMount() {
         this.props.getUserBooks();
     }
+
     render() {
         if (this.props.bookApproved) {
             return <Redirect to="/vendita/user/book/sold" />;
@@ -33,7 +34,6 @@ class UserBooks extends Component {
                 user={this.props.user}
             />
         );
-
         return (
             <section className="content-section" >
                 <h3 className="user-title">My books</h3>

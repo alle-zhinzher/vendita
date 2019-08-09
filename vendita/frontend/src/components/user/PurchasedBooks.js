@@ -4,18 +4,19 @@ import PropTypes from "prop-types";
 import { getPurchasedUserBooks } from "../../actions/user";
 import { connect } from "react-redux";
 //Components
-import SmallPurcaseCart from './smallCart/SmallPurcaseCart';
+import SmallPurcaseCart from './smallCart/SmallPurcaseCart.jsx';
 
 class PurchasedBooks extends Component {
     static propTypes = {
         userPurchasedBooks: PropTypes.array,
         user: PropTypes.object,
-
         getPurchasedUserBooks: PropTypes.func.isRequired,
     };
+
     componentWillMount() {
         this.props.getPurchasedUserBooks(this.props.user.id);
     }
+
     render() {
         const bookPage = this.props.userPurchasedBooks.map(book =>
             <SmallPurcaseCart

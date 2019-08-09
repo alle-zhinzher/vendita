@@ -6,17 +6,17 @@ import { Redirect } from "react-router-dom";
 import { getUserBooksInBasket, cencelUserPurchase } from "../../actions/user";
 import { connect } from "react-redux";
 //Components
-import SmallBasketCart from './smallCart/SmallBasketCart';
+import SmallBasketCart from './smallCart/SmallBasketCart.jsx';
 
 class UserBasket extends Component {
     static propTypes = {
         userBookInBasket: PropTypes.array,
         user: PropTypes.object,
         basketLoad: PropTypes.object,
-
         cencelUserPurchase: PropTypes.func.isRequired,
         getUserBooksInBasket: PropTypes.func.isRequired,
     };
+
     componentWillMount() {
         this.props.getUserBooksInBasket(this.props.user.id);
     }
